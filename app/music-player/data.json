@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "song": "Gentle rain with morning coffee",
+    "artist": "Darockart",
+    "image": "https://images.unsplash.com/photo-1682695795798-1b31ea040caf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "music": "https://cdn.pixabay.com/audio/2023/09/28/audio_b6a47e0969.mp3"
+  },
+  {
+    "id": 2,
+    "song": "Lofi-Study",
+    "artist": "FASSounds",
+    "image": "https://images.unsplash.com/photo-1482517967863-00e15c9b44be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "music": "https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3"
+  },
+  {
+    "id": 3,
+    "song": "Titanium",
+    "artist": "AlishaMusic",
+    "image": "https://images.unsplash.com/photo-1506606401543-2e73709cebb4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "music": "https://cdn.pixabay.com/audio/2023/10/06/audio_14f9198f0b.mp3"
+  }
+]
