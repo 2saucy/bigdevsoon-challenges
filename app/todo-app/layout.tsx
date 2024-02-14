@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider>
-      <TodoProvider>{children}</TodoProvider>
+      <TodoProvider>
+        {children}
+      </TodoProvider>
     </ThemeProvider>
   );
 };

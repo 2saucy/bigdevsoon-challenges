@@ -24,7 +24,7 @@ const Page = () => {
       <Header />
       <div
         className={clsx(
-          "absolute left-1/2 top-[55%] flex h-[75vh] w-[40vw] -translate-x-1/2 -translate-y-1/2 flex-col justify-between gap-2 rounded-lg p-2 shadow-lg shadow-slate-400/15",
+          "absolute left-1/2 max-sm:top-[62%] top-[55%] flex max-sm:w-full max-md:w-[70vw] max-lg:w-[60vw] lg:w-[40vw] h-[75vh] -translate-x-1/2 -translate-y-1/2 flex-col justify-between gap-2 rounded-lg p-2 shadow-lg shadow-slate-400/15",
           theme === "dark" ? "bg-slate-800" : "bg-slate-100",
         )}
       >
