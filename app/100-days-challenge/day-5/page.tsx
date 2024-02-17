@@ -55,10 +55,10 @@ const Recipe = ({
   return (
     <main className="relative flex min-h-screen antialiased max-md:flex-col md:flex-row">
       <img
-        className="object-cover max-md:h-[35vh] max-md:min-w-full md:min-h-full md:w-1/2"
+        className="object-cover max-md:h-[35vh] max-md:min-w-full md:min-h-full md:w-1/3"
         src={image}
       />
-      <div className="space-y-4 bg-white px-8 py-4 md:absolute md:left-1/2 md:top-8 md:max-w-[50%] md:-translate-x-1/2">
+      <div className="space-y-4 bg-white px-8 py-4 max-md:w-full md:absolute md:left-1/2 md:top-8 md:w-2/3 md:-translate-x-1/2 lg:w-1/2">
         <div className="flex items-center gap-2">
           <FaStar className="text-[#ffa51b]" />
           <FaStar className="text-[#ffa51b]" />
@@ -67,33 +67,35 @@ const Recipe = ({
           <FaStar className="text-[#ffa51b]" />
           <span className="ml-2 ">(189)</span>
         </div>
-        <h1 className="text-4xl font-bold">{name}</h1>
+        <h1 className="font-bold max-lg:text-3xl max-sm:text-2xl lg:text-4xl">
+          {name}
+        </h1>
       </div>
-      <section className="mb-8 space-y-4 p-8 text-sm md:mt-44">
+      <section className="space-y-6 p-8 text-sm md:mt-44">
         <div className="flex gap-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-sm:flex-col sm:flex-row">
             <CiClock2 className="h-6 w-6" />
-            <div>
+            <div className="whitespace-nowrap max-md:text-xs">
               <p className=" uppercase">Total time</p>
               <p className=" font-semibold text-[#ffa51b]">{totalTime}</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-sm:flex-col sm:flex-row">
             <PiMedalThin className="h-6 w-6" />
-            <div>
+            <div className="whitespace-nowrap max-sm:text-xs">
               <p className="uppercase">Level</p>
               <p className=" font-semibold text-[#ffa51b]">{level}</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-sm:flex-col sm:flex-row">
             <PiWalletThin className="h-6 w-6" />
-            <div>
+            <div className="whitespace-nowrap max-sm:text-xs">
               <p className=" uppercase">Badget</p>
               <p className=" font-semibold text-[#ffa51b]">{badget}</p>
             </div>
           </div>
         </div>
-        <p className="mb-8 italic">{description}</p>
+        <p className="mb-8 italic font-semibold">{description}</p>
         <div className="space-y-2">
           <h2 className="font-bold uppercase">Ingredients</h2>
           {ingredients.map((ingredient) => (
@@ -112,6 +114,9 @@ const Recipe = ({
           </ol>
         </div>
       </section>
+      <div className="absolute z-10 w-[20%] bg-black p-2 text-xs font-bold uppercase text-white shadow-md max-lg:hidden lg:bottom-6">
+        {name}
+      </div>
     </main>
   );
 };
