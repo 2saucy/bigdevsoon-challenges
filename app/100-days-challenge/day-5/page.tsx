@@ -95,7 +95,7 @@ const Recipe = ({
             </div>
           </div>
         </div>
-        <p className="mb-8 italic font-semibold">{description}</p>
+        <p className="mb-8 font-semibold italic">{description}</p>
         <div className="space-y-2">
           <h2 className="font-bold uppercase">Ingredients</h2>
           {ingredients.map((ingredient) => (
