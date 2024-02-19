@@ -11,7 +11,7 @@ const Page = () => {
         className="h-full w-full object-cover"
         src="/assets/100-days-challenge/day-7/background.jpg"
       />
-      <div className="absolute top-1/2 max-sm:p-4 sm:ml-12 -translate-y-1/2 max-sm:w-full md:w-[450px]">
+      <div className="absolute top-1/2 -translate-y-1/2 max-sm:w-full max-sm:p-4 sm:ml-12 md:w-[450px]">
         <div className="space-y-2">
           <span className="text-sm font-black uppercase text-[#939393]">
             start for free
@@ -26,25 +26,24 @@ const Page = () => {
 
 export default Page;
 
-
 const FormContainer = () => {
   const [formValues, setFormValues] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
-  })
+  });
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormValues({
       ...formValues,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const onSubmit = () => {
     console.log(formValues);
-  }
+  };
 
   return (
     <form onSubmit={onSubmit} className="mt-12 flex flex-col gap-4">
@@ -86,21 +85,21 @@ const FormContainer = () => {
         Create account
       </button>
     </form>
-  )
-}
+  );
+};
 
 const InputContainer = ({
   label,
   icon,
   name,
   className,
-  onChange
+  onChange,
 }: {
   label: string;
   icon: JSX.Element;
   name: string;
   className?: string;
-  onChange?: (e: any) => void
+  onChange?: (e: any) => void;
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -129,7 +128,7 @@ const InputContainer = ({
           name={name}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className="tracking-wider w-full bg-transparent text-xs font-bold outline-none"
+          className="w-full bg-transparent text-xs font-bold tracking-wider outline-none"
           type={name === "password" ? "password" : "text"}
         />
       </div>
