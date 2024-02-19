@@ -32,9 +32,12 @@ const Page = () => {
     <Color src={currentImg} crossOrigin="anonymous" format="hex">
       {({ data, loading }) => {
         const backgroundColor = loading ? "black" : data;
-        
+
         return (
-          <main style={{ backgroundColor }} className="flex min-h-screen flex-col items-center justify-center pb-8">
+          <main
+            style={{ backgroundColor }}
+            className="flex min-h-screen flex-col items-center justify-center pb-8"
+          >
             <div className="flex w-full items-center gap-8 p-8 max-md:flex-col">
               <div className="flex w-full items-center justify-between text-xs text-slate-50 md:hidden">
                 <button className="hover:underline" onClick={prevImg}>
@@ -69,7 +72,7 @@ const Page = () => {
                     className={clsx(
                       "h-full w-full cursor-pointer object-cover duration-100 ease-in-out",
                       img === currentImg &&
-                      "outline outline-2 outline-offset-4 outline-slate-50",
+                        "outline outline-2 outline-offset-4 outline-slate-50",
                     )}
                   />
                 </div>
