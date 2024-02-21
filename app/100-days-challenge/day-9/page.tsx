@@ -3,8 +3,11 @@ import clsx from "clsx";
 import { useState } from "react";
 import { BsArrowRepeat } from "react-icons/bs";
 import { LuCopy, LuCopyCheck } from "react-icons/lu";
+import { DEFAULT_SETTINGS } from "./constants";
+import { Settings, Setting } from "./types";
+import toast, { Toaster } from "react-hot-toast";
 
-const generatePassword = (settings: ISetting[], inputValue: number) => {
+const generatePassword = (settings: Settings, inputValue: number) => {
   const chars = "abcdefghijklmnopqrstuvwxyz";
   const numbers = "0123456789";
   const symbols = "!@#$%^&*()_+";
@@ -38,37 +41,28 @@ const generatePassword = (settings: ISetting[], inputValue: number) => {
   return password;
 };
 
-interface ISetting {
-  name: string;
-  checked: boolean;
-}
-
 const Page = () => {
   const [rangeValue, setRangeValue] = useState<number>(16);
   const [generatedPassword, setGeneratedPassword] = useState<string>("");
-  const [settings, setSettings] = useState<ISetting[]>([
-    {
-      name: "Include uppercase letters",
-      checked: true,
-    },
-    {
-      name: "Include lowercase letters",
-      checked: true,
-    },
-    {
-      name: "Include numbers",
-      checked: true,
-    },
-    {
-      name: "Include symbols",
-      checked: true,
-    },
-  ]);
+  const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
   const [isCopied, setIsCopied] = useState<boolean>(false);
 
   const handleCopy = () => {
+    if (!generatedPassword) return;
+
     navigator.clipboard.writeText(generatedPassword);
     setIsCopied(true);
+
+    toast.success("Copied to clipboard!", {
+      position: "bottom-right",
+      duration: 2000,
+    });
+  };
+
+  const handleReset = () => {
+    setRangeValue(16);
+    setSettings(DEFAULT_SETTINGS);
+    setGeneratedPassword("");
   };
 
   const handleGeneratePassword = () => {
@@ -76,7 +70,7 @@ const Page = () => {
     setIsCopied(false);
   };
 
-  const handleSettingChange = (setting: ISetting) => {
+  const handleSettingChange = (setting: Setting) => {
     const newSettings = [...settings];
     const index = newSettings.findIndex((s) => s.name === setting.name);
     newSettings[index].checked = !newSettings[index].checked;
@@ -91,14 +85,16 @@ const Page = () => {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#f7e8ff]">
-      <div className="space-y-6 bg-[#090212] px-4 py-8 text-slate-50 shadow-lg max-md:w-full md:my-16 md:w-1/2 md:rounded-2xl">
+    <main className="flex min-h-screen items-center justify-center bg-day-9 bg-cover">
+      <Toaster />
+      <div className="space-y-6 rounded-2xl bg-[#090212] px-6 py-8 text-slate-50 shadow-xl">
         <h1 className="text-2xl font-semibold">Generate password</h1>
         <div className="space-y-4">
           <h2 className="text-xs uppercase opacity-50">generated password</h2>
           <Display
             generatedPassword={generatedPassword}
             handleCopy={handleCopy}
+            handleReset={handleReset}
             isCopied={isCopied}
           />
         </div>
@@ -137,10 +133,12 @@ export default Page;
 const Display = ({
   generatedPassword,
   handleCopy,
+  handleReset,
   isCopied,
 }: {
   generatedPassword: string;
   handleCopy: () => void;
+  handleReset: () => void;
   isCopied: boolean;
 }) => {
   return (
@@ -155,8 +153,11 @@ const Display = ({
         <button
           onClick={handleCopy}
           className={clsx(
-            "hover:text-[#c45bf6]/50",
-            isCopied ? "text-[#c45bf6]" : "text-slate-50",
+            generatedPassword.length === 0
+              ? "cursor-not-allowed text-gray-400"
+              : isCopied
+                ? "text-[#c45bf6]"
+                : "text-[#c45bf6]/50 hover:text-[#c45bf6]",
           )}
         >
           {isCopied ? (
@@ -165,7 +166,7 @@ const Display = ({
             <LuCopy className="h-5 w-5" />
           )}
         </button>
-        <button className="hover:text-[#c45bf6]/50">
+        <button onClick={handleReset} className="hover:text-[#c45bf6]">
           <BsArrowRepeat className="h-5 w-5" />
         </button>
       </div>
@@ -200,8 +201,8 @@ const Setting = ({
   setting,
   handleSettingChange,
 }: {
-  setting: ISetting;
-  handleSettingChange: (setting: ISetting) => void;
+  setting: Setting;
+  handleSettingChange: (setting: Setting) => void;
 }) => {
   const { name, checked } = setting;
 
