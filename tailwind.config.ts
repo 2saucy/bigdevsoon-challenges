@@ -16,6 +16,8 @@ const config: Config = {
           "url('/assets/100-days-challenge/day-9/pexels-stephan-seeber-1261728.jpg')",
         "day-10":
           "url('/assets/100-days-challenge/day-10/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg')",
+        "day-11":
+          "url('/assets/100-days-challenge/day-11/taylor-van-riper-yQorCngxzwI-unsplash.jpg')",
       },
     },
   },
