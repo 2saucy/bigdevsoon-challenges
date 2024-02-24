@@ -9,9 +9,17 @@
           "date": "2/15/24",
           "image": "/assets/100-days-challenge/day-13/jr-korpa-9XngoIpxcEo-unsplash.jpg",
           "title": "Update Website Homepage",
-          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut."
+          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
+          "participants": [
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            },
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            }
+          ]
         }
-      ] 
+      ]
     },
     {
       "id": 2,
@@ -22,14 +30,24 @@
           "date": "2/15/24",
           "image": "",
           "title": "Big Fix - User Registration",
-          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut."
+          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
+          "participants": [
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            }
+          ]
         },
         {
           "level": "Medium",
           "date": "2/15/24",
           "image": "/assets/100-days-challenge/day-13/travis-leery-E4BKNmb31fA-unsplash.jpg",
           "title": "Social Media Campaign",
-          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut."
+          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
+          "participants": [
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            }
+          ]
         }
       ]
     },
@@ -42,7 +60,12 @@
           "date": "2/15/24",
           "image": "",
           "title": "Mobile App Feature - Push Notifications",
-          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut."
+          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
+          "participants": [
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            }
+          ]
         }
       ]
     },
@@ -55,14 +78,33 @@
           "date": "2/15/24",
           "image": "/assets/100-days-challenge/day-13/travis-leery-E4BKNmb31fA-unsplash.jpg",
           "title": "Content Creation - Blog Post",
-          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut."
+          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
+          "participants": [
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            },
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            }
+          ]
         },
         {
           "level": "Medium",
           "date": "2/15/24",
           "image": "/assets/100-days-challenge/day-13/jr-korpa-9XngoIpxcEo-unsplash.jpg",
           "title": "IT Security Audit",
-          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut."
+          "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
+          "participants": [
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            },
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            },
+            {
+              "image": "/assets/100-days-challenge/day-13/profile.jpg"
+            }
+          ]
         }
       ]
     }

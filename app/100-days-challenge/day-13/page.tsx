@@ -6,16 +6,16 @@ const Page = () => {
   return (
     <main className="min-h-screen space-y-8 bg-[#e3e8ee] p-8">
       <h1 className="text-4xl font-bold">Boards</h1>
-      <div className="grid 2xl:grid-cols-4 gap-8 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 max-md:place-items-center">
+      <div className="grid gap-4 max-lg:grid-cols-2 max-md:grid-cols-1 lg:grid-cols-4">
         {lists.map(({ id, name, list }) => (
           <div key={id} className="space-y-2">
-            <div className="flex items-center gap-2">
-              <h2 className="text-xl font-bold">{name}</h2>
+            <div className="flex items-center gap-2 text-slate-500">
+              <h2 className="text-lg font-bold">{name}</h2>
               <button className="rounded-full border-2 p-2 duration-100 ease-in-out hover:bg-black/10">
                 <FaPlus />
               </button>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex shrink-0 flex-col gap-4">
               {list.map((item, i) => (
                 <Card key={i} {...item} />
               ))}
@@ -35,19 +35,21 @@ const Card = ({
   level,
   date,
   image,
+  participants,
 }: {
   title: string;
   description: string;
   level: string;
   date: string;
   image?: string;
+  participants: { image: string }[];
 }) => {
   return (
     <div className="max-w-[360px] space-y-4 rounded-lg bg-white p-4 shadow-lg">
       <div className="flex items-center justify-between">
         <span
           className={clsx(
-            "font-ligth rounded-full px-2 py-1 text-xs uppercase text-white",
+            "font-ligth rounded-full px-2 py-1 text-[.5rem] uppercase text-white shadow-md",
             level === "High"
               ? "bg-red-500"
               : level === "Medium"
@@ -57,22 +59,53 @@ const Card = ({
         >
           {level}
         </span>
-        <span className="text-xs">{date}</span>
+        <span className="text-xs italic">{date}</span>
       </div>
       {image && (
         <div className="h-[140px] overflow-hidden rounded-xl">
-          <img className="h-full w-full object-cover" src={image} alt="Card Image" />
+          <img
+            className="h-full w-full object-cover"
+            src={image}
+            alt="Card Image"
+          />
         </div>
       )}
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p>{description}</p>
+        <h3 className="font-semibold">{title}</h3>
+        <p className="font-serif text-xs">{description}</p>
       </div>
-      <div>
-        <button className="rounded-full border-2 border-dashed  border-black p-2 opacity-20 duration-150 ease-in-out hover:opacity-100">
-          <FaPlus className="h-3 w-3" />
+      <div className="relative flex h-[40px] items-center">
+        {participants.map(({ image }, i) => (
+          <ProfileCircle key={i} profileImg={image} style={{ left: i * 25 }} />
+        ))}
+        <button
+          className="absolute flex aspect-square w-[40px] items-center justify-center rounded-full border-2  border-dashed border-black opacity-20 shadow-md backdrop-blur-sm duration-150 ease-in-out  hover:opacity-70"
+          style={{ left: participants.length * 25 }}
+        >
+          <FaPlus />
         </button>
       </div>
+    </div>
+  );
+};
+
+const ProfileCircle = ({
+  profileImg,
+  style,
+}: {
+  profileImg: string;
+  style?: React.CSSProperties;
+}) => {
+  return (
+    <div
+      className="absolute aspect-square w-[40px] overflow-hidden rounded-full shadow-md"
+      style={style}
+    >
+      <img
+        className="h-full w-full object-cover"
+        src={profileImg}
+        alt="Profile Image"
+      />
     </div>
   );
 };
