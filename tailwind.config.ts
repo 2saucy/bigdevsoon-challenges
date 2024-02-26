@@ -9,8 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": 
-          "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "day-9":
@@ -19,8 +18,8 @@ const config: Config = {
           "url('/assets/100-days-challenge/day-10/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg')",
         "day-11":
           "url('/assets/100-days-challenge/day-11/taylor-van-riper-yQorCngxzwI-unsplash.jpg')",
-        "day-12":
-          "url('/assets/100-days-challenge/day-12/background.jpg')",
+        "day-12": "url('/assets/100-days-challenge/day-12/background.jpg')",
+        "day-14": "url('/assets/100-days-challenge/day-14/background.jpg')",
       },
     },
   },
