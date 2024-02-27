@@ -20,6 +20,8 @@ const config: Config = {
           "url('/assets/100-days-challenge/day-11/taylor-van-riper-yQorCngxzwI-unsplash.jpg')",
         "day-12": "url('/assets/100-days-challenge/day-12/background.jpg')",
         "day-14": "url('/assets/100-days-challenge/day-14/background.jpg')",
+        "day-16":
+          "url('/assets/100-days-challenge/day-16/leaf-wallpaper-summer-plant-pattern.jpg')",
       },
     },
   },
