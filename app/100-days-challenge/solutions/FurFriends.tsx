@@ -18,7 +18,7 @@ interface Dog {
 
 type Dogs = Dog[];
 
-const DaySixteen = () => {
+const FurFriends = () => {
   const dogs: Dogs = [
     {
       name: "Noemi",
@@ -97,7 +97,7 @@ const DaySixteen = () => {
   );
 };
 
-export default DaySixteen;
+export default FurFriends;
 
 const Profile = ({ currentDog }: { currentDog: Dog }) => {
   const {

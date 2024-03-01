@@ -3,7 +3,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
 import clsx from "clsx";
 
-const DaySix = () => {
+const ImageCarousel = () => {
   const images: string[] = [
     "andreas-rasmussen-Iw12lY3koDk-unsplash.jpg",
     "cristian-castillo-73pyV0JJOmE-unsplash.jpg",
@@ -36,7 +36,7 @@ const DaySix = () => {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center pb-8 bg-black">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-black pb-8">
       <div className="flex w-full items-center gap-8 p-8 max-md:flex-col">
         <div className="flex w-full items-center justify-between text-xs text-slate-50 md:hidden">
           <button className="hover:underline" onClick={prevImg}>
@@ -74,7 +74,7 @@ const DaySix = () => {
               className={clsx(
                 "h-full w-full cursor-pointer object-cover duration-100 ease-in-out",
                 img === currentImg &&
-                "outline outline-2 outline-offset-4 outline-slate-50",
+                  "outline outline-2 outline-offset-4 outline-slate-50",
               )}
             />
           </div>
@@ -84,4 +84,4 @@ const DaySix = () => {
   );
 };
 
-export default DaySix;
+export default ImageCarousel;

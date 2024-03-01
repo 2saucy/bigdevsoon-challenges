@@ -4,7 +4,7 @@ import { ChangeEvent, useState } from "react";
 import { FaIdCard } from "react-icons/fa";
 import { MdMessage, MdVisibility } from "react-icons/md";
 
-const DaySeven = () => {
+const CreateAccount = () => {
   return (
     <main className="relative h-screen antialiased">
       <img
@@ -24,7 +24,7 @@ const DaySeven = () => {
   );
 };
 
-export default DaySeven;
+export default CreateAccount;
 
 const FormContainer = () => {
   const [formValues, setFormValues] = useState({

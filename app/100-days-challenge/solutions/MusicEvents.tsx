@@ -36,7 +36,7 @@ export function outputDate(dateObj: Date) {
   return `${formatTime(dateObj.getDate())} ${dateObj.toLocaleString("es-ES", { month: "long" })}`;
 }
 
-const DayEight = () => {
+const MusicEvents = () => {
   const events: MusicEvents = [
     {
       id: 1,
@@ -79,7 +79,7 @@ const DayEight = () => {
   );
 };
 
-export default DayEight;
+export default MusicEvents;
 
 const EventsContainer = ({ events }: { events: MusicEvents }) => {
   return (

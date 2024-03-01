@@ -5,7 +5,7 @@ import { Attachment, Notification, Notifications } from "../types";
 
 import { MdFileDownload } from "react-icons/md";
 
-const DayFifteen = () => {
+const Notifications = () => {
   const notifications: Notifications = [
     {
       id: 1,
@@ -78,7 +78,7 @@ const DayFifteen = () => {
   );
 };
 
-export default DayFifteen;
+export default Notifications;
 
 const Card = ({ notifications }: { notifications: Notifications }) => {
   return (

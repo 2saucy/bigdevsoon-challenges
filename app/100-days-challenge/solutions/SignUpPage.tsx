@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbEye, TbEyeClosed } from "react-icons/tb";
 
-const DayTen = () => {
+const SignUpPage = () => {
   return (
     <main className="flex min-h-screen items-center justify-evenly gap-8 bg-day-10 bg-cover p-8 max-lg:flex-col">
       <Card>
@@ -30,7 +30,7 @@ const DayTen = () => {
   );
 };
 
-export default DayTen;
+export default SignUpPage;
 
 const Card = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -4,7 +4,7 @@ import { IoIosStar } from "react-icons/io";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
 import clsx from "clsx";
 
-const DayTwelve = () => {
+const RestaurantReservation = () => {
   const images: string[] = [
     "joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg",
     "chris-liverani-oCsaxvGCehM-unsplash.jpg",
@@ -84,4 +84,4 @@ const DayTwelve = () => {
   );
 };
 
-export default DayTwelve;
+export default RestaurantReservation;

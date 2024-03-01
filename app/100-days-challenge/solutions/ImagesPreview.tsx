@@ -5,7 +5,7 @@ import { FaList } from "react-icons/fa";
 import { FaDisplay } from "react-icons/fa6";
 import { GrAppsRounded } from "react-icons/gr";
 
-const DayEighteen = () => {
+const ImagesPreview = () => {
   const images: string[] = [
     "birmingham-museums-trust-wvD0zZnRbcw-unsplash.jpg",
     "chuttersnap-eH_ftJYhaTY-unsplash.jpg",
@@ -38,7 +38,7 @@ const DayEighteen = () => {
   );
 };
 
-export default DayEighteen;
+export default ImagesPreview;
 
 const Header = ({
   activeMode,

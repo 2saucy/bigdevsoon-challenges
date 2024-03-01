@@ -1,98 +1,103 @@
-import DayOne from "./solutions/DayOne";
-import DayTwo from "./solutions/DayTwo";
-import DayThree from "./solutions/DayThree";
-import DayFour from "./solutions/DayFour";
-import DayFive from "./solutions/DayFive";
-import DaySix from "./solutions/DaySix";
-import DaySeven from "./solutions/DaySeven";
-import DayEight from "./solutions/DayEight";
-import DayNine from "./solutions/DayNine";
-import DayTen from "./solutions/DayTen";
-import DayEleven from "./solutions/DayEleven";
-import DayTwelve from "./solutions/DayTwelve";
-import DayThirteen from "./solutions/DayThirteen";
-import DayFourteen from "./solutions/DayFourteen";
-import DayFifteen from "./solutions/DayFifteen";
-import DaySixteen from "./solutions/DaySixteen";
-import DaySeventeen from "./solutions/DaySeventeen";
-import DayEighteen from "./solutions/DayEighteen";
+import ProfileCard from "./solutions/ProfileCard";
+import AddToBag from "./solutions/AddToBag";
+import MobileNavigation from "./solutions/MobileNavigation";
+import ContactUs from "./solutions/ContactUs";
+import Recipe from "./solutions/Recipe";
+import ImageCarousel from "./solutions/ImageCarousel";
+import CreateAccount from "./solutions/CreateAccount";
+import MusicEvents from "./solutions/MusicEvents";
+import PasswordGenerator from "./solutions/PasswordGenerator";
+import SignUpPage from "./solutions/SignUpPage";
+import HotelBooking from "./solutions/HotelBooking";
+import RestaurantReservation from "./solutions/RestaurantReservation";
+import TaskBoard from "./solutions/TaskBoard";
+import ShoppingList from "./solutions/ShoppingList";
+import Notifications from "./solutions/Notifications";
+import FurFriends from "./solutions/FurFriends";
+import ArticleSlider from "./solutions/ArticleSlider";
+import ImagesPreview from "./solutions/ImagesPreview";
+import UploadImages from "./solutions/UploadImages";
 
 type Challenges = {
-  day: number;
+  slug: string;
   solution: JSX.Element;
 }[];
 
 export const challenges: Challenges = [
   {
-    day: 1,
-    solution: <DayOne />,
+    slug: "profile-card",
+    solution: <ProfileCard />,
   },
   {
-    day: 2,
-    solution: <DayTwo />,
+    slug: "add-to-bag",
+    solution: <AddToBag />,
   },
   {
-    day: 3,
-    solution: <DayThree />,
+    slug: "mobile-navigation",
+    solution: <MobileNavigation />,
   },
   {
-    day: 4,
-    solution: <DayFour />,
+    slug: "contact-us",
+    solution: <ContactUs />,
   },
   {
-    day: 5,
-    solution: <DayFive />,
+    slug: "recipe",
+    solution: <Recipe />,
   },
   {
-    day: 6,
-    solution: <DaySix />,
+    slug: "image-carousel",
+    solution: <ImageCarousel />,
   },
   {
-    day: 7,
-    solution: <DaySeven />,
+    slug: "create-account",
+    solution: <CreateAccount />,
   },
   {
-    day: 8,
-    solution: <DayEight />,
+    slug: "music-events",
+    solution: <MusicEvents />,
   },
   {
-    day: 9,
-    solution: <DayNine />,
+    slug: "password-generator",
+    solution: <PasswordGenerator />,
   },
   {
-    day: 10,
-    solution: <DayTen />,
+    slug: "sign-up-page",
+    solution: <SignUpPage />,
   },
   {
-    day: 11,
-    solution: <DayEleven />,
+    slug: "hotel-booking",
+    solution: <HotelBooking />,
   },
   {
-    day: 12,
-    solution: <DayTwelve />,
+    slug: "restaurant-reservation",
+    solution: <RestaurantReservation />,
   },
   {
-    day: 13,
-    solution: <DayThirteen />,
+    slug: "task-board",
+    solution: <TaskBoard />,
   },
   {
-    day: 14,
-    solution: <DayFourteen />,
+    slug: "shopping-list",
+    solution: <ShoppingList />,
   },
   {
-    day: 15,
-    solution: <DayFifteen />,
+    slug: "notifications",
+    solution: <Notifications />,
   },
   {
-    day: 16,
-    solution: <DaySixteen />,
+    slug: "fur-friends",
+    solution: <FurFriends />,
   },
   {
-    day: 17,
-    solution: <DaySeventeen />,
+    slug: "article-slider",
+    solution: <ArticleSlider />,
   },
   {
-    day: 18,
-    solution: <DayEighteen />,
+    slug: "images-preview",
+    solution: <ImagesPreview />,
+  },
+  {
+    slug: "upload-images",
+    solution: <UploadImages />,
   },
 ];

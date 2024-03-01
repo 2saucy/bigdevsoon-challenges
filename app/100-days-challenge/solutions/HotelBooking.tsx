@@ -2,7 +2,7 @@
 import { ChangeEvent, useState } from "react";
 import { FaChevronDown, FaChevronUp, FaLocationDot } from "react-icons/fa6";
 
-const DayEleven = () => {
+const HotelBooking = () => {
   return (
     <main className="flex min-h-screen items-center justify-center bg-day-11 bg-cover bg-center">
       <Card>
@@ -13,7 +13,7 @@ const DayEleven = () => {
   );
 };
 
-export default DayEleven;
+export default HotelBooking;
 
 const Card = ({ children }: { children: React.ReactNode }) => {
   return (

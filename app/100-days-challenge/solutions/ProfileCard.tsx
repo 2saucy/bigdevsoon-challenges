@@ -2,7 +2,7 @@ import { FaFacebook, FaLinkedin, FaDribbble } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 
-const DayOne = () => {
+const ProfileCard = () => {
   return (
     <main className="flex h-screen items-center justify-center bg-[#eff3c0]">
       <div className="relative h-[650px] w-[450px] overflow-hidden rounded-[3rem] bg-white p-8 shadow-xl duration-150 ease-in-out hover:scale-105 hover:shadow-2xl">
@@ -60,4 +60,4 @@ const DayOne = () => {
   );
 };
 
-export default DayOne;
+export default ProfileCard;

@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import { ChangeEvent, useState } from "react";
 
-const DayFour = () => {
+const ContactUs = () => {
   return (
     <main className="flex h-screen items-center gap-20 bg-gradient-to-b from-violet-500 to-fuchsia-900 px-20 antialiased">
       <div className="flex h-[620px] flex-col gap-16 text-white">
@@ -27,7 +27,7 @@ const DayFour = () => {
   );
 };
 
-export default DayFour;
+export default ContactUs;
 
 const Card = () => {
   const [formData, setFormData] = useState({

@@ -14,7 +14,7 @@ interface Post {
   img: string;
 }
 
-const DaySeventeen = () => {
+const ArticleSlider = () => {
   const posts: Post[] = [
     {
       authorImg: "/assets/100-days-challenge/day-17/profile-pic.jpg",
@@ -70,7 +70,7 @@ const DaySeventeen = () => {
   );
 };
 
-export default DaySeventeen;
+export default ArticleSlider;
 
 const Carousel = ({ posts }: { posts: Post[] }) => {
   const [currentPost, setCurrentPost] = useState<Post>(posts[0]);

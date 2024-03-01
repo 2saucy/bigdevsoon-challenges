@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { MdClose } from "react-icons/md";
 import { CartContext, CartProvider } from "../context/CartContext";
 
-const DayFourteen = () => {
+const ShoppingList = () => {
   return (
     <CartProvider>
       <main className="flex min-h-screen items-center justify-center gap-4 bg-day-14 bg-cover py-8">
@@ -19,7 +19,7 @@ const DayFourteen = () => {
   );
 };
 
-export default DayFourteen;
+export default ShoppingList;
 
 const Cart = () => {
   const { cart } = useContext(CartContext);

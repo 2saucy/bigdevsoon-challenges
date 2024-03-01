@@ -13,7 +13,7 @@ interface Recipe {
   instructions: Array<string>;
 }
 
-const DayFive = () => {
+const Recipe = () => {
   const recipe: Recipe = {
     image: "/assets/100-days-challenge/day-5/coffee.jpeg",
     name: "Sweet Iced Coffee with Coconut Milk",
@@ -37,12 +37,12 @@ const DayFive = () => {
     ],
   };
 
-  return <Recipe {...recipe} />;
+  return <RecipeCard {...recipe} />;
 };
 
-export default DayFive;
+export default Recipe;
 
-const Recipe = ({
+const RecipeCard = ({
   image,
   name,
   description,

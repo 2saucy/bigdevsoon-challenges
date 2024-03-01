@@ -11,7 +11,7 @@ interface ProductInfo {
   sizes: string[];
 }
 
-const DayTwo = () => {
+const AddToBag = () => {
   const product = {
     images: [
       "/assets/100-days-challenge/day-2/1.jpg",
@@ -35,7 +35,7 @@ const DayTwo = () => {
   );
 };
 
-export default DayTwo;
+export default AddToBag;
 
 const ProductInfo: React.FC<ProductInfo> = ({
   brand,

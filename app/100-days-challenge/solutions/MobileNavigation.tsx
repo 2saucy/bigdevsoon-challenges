@@ -6,7 +6,7 @@ import { IoMdMail, IoMdNotifications } from "react-icons/io";
 import { IoPeopleSharp, IoPerson, IoSettingsSharp } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
 
-const DayThree = () => {
+const MobileNavigation = () => {
   const items = [
     {
       name: "Personal Data",
@@ -74,7 +74,7 @@ const DayThree = () => {
   );
 };
 
-export default DayThree;
+export default MobileNavigation;
 
 const Item = ({ name, icon }: { name: string; icon: JSX.Element }) => {
   return (

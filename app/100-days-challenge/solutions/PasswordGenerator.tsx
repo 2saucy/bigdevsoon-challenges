@@ -41,7 +41,7 @@ const generatePassword = (settings: Settings, inputValue: number) => {
   return password;
 };
 
-const DayNine = () => {
+const PasswordGenerator = () => {
   const [rangeValue, setRangeValue] = useState<number>(16);
   const [generatedPassword, setGeneratedPassword] = useState<string>("");
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
@@ -128,7 +128,7 @@ const DayNine = () => {
   );
 };
 
-export default DayNine;
+export default PasswordGenerator;
 
 const Display = ({
   generatedPassword,

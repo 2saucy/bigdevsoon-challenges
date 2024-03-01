@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { FaPlus } from "react-icons/fa";
 
-const DayThirteen = () => {
+const TaskBoard = () => {
   const lists = [
     {
       id: 1,
@@ -147,7 +147,7 @@ const DayThirteen = () => {
   );
 };
 
-export default DayThirteen;
+export default TaskBoard;
 
 const Card = ({
   title,
