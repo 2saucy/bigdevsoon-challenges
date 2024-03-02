@@ -17,6 +17,7 @@ import FurFriends from "./solutions/FurFriends";
 import ArticleSlider from "./solutions/ArticleSlider";
 import ImagesPreview from "./solutions/ImagesPreview";
 import UploadImages from "./solutions/UploadImages";
+import CardWallet from "./solutions/CardWallet";
 
 type Challenges = {
   slug: string;
@@ -99,5 +100,9 @@ export const challenges: Challenges = [
   {
     slug: "upload-images",
     solution: <UploadImages />,
+  },
+  {
+    slug: "card-wallet",
+    solution: <CardWallet />,
   },
 ];

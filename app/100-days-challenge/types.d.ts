@@ -42,3 +42,21 @@ export interface Channel {
   name: string;
   url: string;
 }
+
+export interface Card {
+  id: number;
+  balance: number;
+  card_number: string;
+  card_type: string;
+  expiry_date: string;
+  transactions: Transaction[];
+  is_default: boolean;
+}
+
+export interface Transaction {
+  id: number;
+  amount: number;
+  date: string;
+  description: string;
+  card_id: number;
+}
