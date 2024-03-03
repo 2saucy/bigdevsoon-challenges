@@ -18,6 +18,7 @@ import ArticleSlider from "./solutions/ArticleSlider";
 import ImagesPreview from "./solutions/ImagesPreview";
 import UploadImages from "./solutions/UploadImages";
 import CardWallet from "./solutions/CardWallet";
+import PricingPlans from "./solutions/PricingPlans";
 
 type Challenges = {
   slug: string;
@@ -105,4 +106,8 @@ export const challenges: Challenges = [
     slug: "card-wallet",
     solution: <CardWallet />,
   },
+  {
+    slug: "pricing-plans",
+    solution: <PricingPlans />
+  }
 ];
