@@ -228,7 +228,6 @@ export interface AddCardFormValues {
   default: boolean;
 }
 
-
 const AddCardForm = ({
   setFormActive,
 }: {

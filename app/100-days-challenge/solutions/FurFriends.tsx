@@ -90,7 +90,7 @@ const FurFriends = () => {
   const [currentDog, setCurrentDog] = useState<Dog>(dogs[0]);
 
   return (
-    <main className="flex min-h-screen items-center justify-evenly bg-day-16 max-md:flex-col">
+    <main className="bg-day-16 flex min-h-screen items-center justify-evenly max-md:flex-col">
       <DogsList dogs={dogs} setCurrentDog={setCurrentDog} />
       <Profile currentDog={currentDog} />
     </main>

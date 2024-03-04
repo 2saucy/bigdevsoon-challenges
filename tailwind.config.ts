@@ -1,30 +1,40 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+const config = {
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "day-9":
-          "url('/assets/100-days-challenge/day-9/pexels-stephan-seeber-1261728.jpg')",
-        "day-10":
-          "url('/assets/100-days-challenge/day-10/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg')",
-        "day-11":
-          "url('/assets/100-days-challenge/day-11/taylor-van-riper-yQorCngxzwI-unsplash.jpg')",
-        "day-12": "url('/assets/100-days-challenge/day-12/background.jpg')",
-        "day-14": "url('/assets/100-days-challenge/day-14/background.jpg')",
-        "day-16":
-          "url('/assets/100-days-challenge/day-16/leaf-wallpaper-summer-plant-pattern.jpg')",
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [],
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
 export default config;

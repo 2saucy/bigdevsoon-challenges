@@ -85,7 +85,7 @@ const PasswordGenerator = () => {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-day-9 bg-cover">
+    <main className="bg-day-9 flex min-h-screen items-center justify-center bg-cover">
       <Toaster />
       <div className="space-y-6 rounded-2xl bg-[#090212] px-6 py-8 text-slate-50 shadow-xl">
         <h1 className="text-2xl font-semibold">Generate password</h1>

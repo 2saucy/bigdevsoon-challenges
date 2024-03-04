@@ -7,7 +7,7 @@ import { TbEye, TbEyeClosed } from "react-icons/tb";
 
 const SignUpPage = () => {
   return (
-    <main className="flex min-h-screen items-center justify-evenly gap-8 bg-day-10 bg-cover p-8 max-lg:flex-col">
+    <main className="bg-day-10 flex min-h-screen items-center justify-evenly gap-8 bg-cover p-8 max-lg:flex-col">
       <Card>
         <div className="space-y-4">
           <GoogleButton />

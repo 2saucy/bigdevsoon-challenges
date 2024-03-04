@@ -4,7 +4,7 @@ import { FaChevronDown, FaChevronUp, FaLocationDot } from "react-icons/fa6";
 
 const HotelBooking = () => {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-day-11 bg-cover bg-center">
+    <main className="bg-day-11 flex min-h-screen items-center justify-center bg-cover bg-center">
       <Card>
         <FormContainer />
         <ImageContainer />

@@ -1,8 +1,38 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { FaFacebook, FaLinkedin, FaDribbble } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 
 const ProfileCard = () => {
+  const socialMedia = [
+    {
+      name: "Facebook",
+      icon: <FaFacebook />,
+      url: "https://facebook.com",
+    },
+    {
+      name: "Twitter",
+      icon: <FaXTwitter />,
+      url: "https://twitter.com",
+    },
+    {
+      name: "Instagram",
+      icon: <RiInstagramFill />,
+      url: "https://instagram.com",
+    },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedin />,
+      url: "https://linkedin.com",
+    },
+    {
+      name: "Dribbble",
+      icon: <FaDribbble />,
+      url: "https://dribbble.com",
+    },
+  ];
+
   return (
     <main className="flex h-screen items-center justify-center bg-[#eff3c0]">
       <div className="relative h-[650px] w-[450px] overflow-hidden rounded-[3rem] bg-white p-8 shadow-xl duration-150 ease-in-out hover:scale-105 hover:shadow-2xl">
@@ -10,13 +40,13 @@ const ProfileCard = () => {
           className="absolute left-0 top-0 h-[250px] w-full"
           src="/assets/100-days-challenge/day-1/curve.svg"
         />
-        <div className="absolute left-1/2 top-5 z-10 aspect-square h-[120px] w-[120px] -translate-x-1/2 overflow-hidden rounded-full border-2">
-          <img
-            className="h-full w-full object-cover"
+        <Avatar className="absolute left-1/2 top-5 h-[120px] w-[120px] -translate-x-1/2">
+          <AvatarImage
+            className="object-cover"
             src="/assets/100-days-challenge/day-1/profile-pic.jpg"
-            alt="profile picture"
           />
-        </div>
+          <AvatarFallback>Profile Image</AvatarFallback>
+        </Avatar>
         <div className="flex h-full flex-col justify-between pt-[250px]">
           <div className="self-center text-center">
             <h1 className="text-2xl font-semibold tracking-widest">
@@ -24,35 +54,31 @@ const ProfileCard = () => {
             </h1>
             <p className="text-[0.7rem] text-[#43535f]">@johnnyroggers</p>
           </div>
-          <div className="flex items-center justify-center gap-8">
-            <a href="http://www.facebook.com" target="_blank" rel="noreferrer">
-              <FaFacebook className="h-5 w-5 cursor-pointer hover:animate-pulse" />
-            </a>
-            <a href="http://www.linkedin.com" target="_blank" rel="noreferrer">
-              <FaLinkedin className="h-5 w-5 cursor-pointer hover:animate-pulse" />
-            </a>
-            <a href="https://twitter.com/" target="_blank" rel="noreferrer">
-              <FaXTwitter className="h-5 w-5 cursor-pointer hover:animate-pulse" />
-            </a>
-            <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
-              <RiInstagramFill className="h-5 w-5 cursor-pointer hover:animate-pulse" />
-            </a>
-            <a href="http://www.dribbble.com" target="_blank" rel="noreferrer">
-              <FaDribbble className="h-5 w-5 cursor-pointer hover:animate-pulse" />
-            </a>
+          <div className="flex items-center justify-center gap-4">
+            {socialMedia.map((s, i) => (
+              <a
+                key={i}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                className="duration-200 ease-in hover:text-[#e03f8d]"
+              >
+                {s.icon}
+              </a>
+            ))}
           </div>
-          <p className="text-center text-xs">
+          <p className="text-center">
             Crafting brand and communication strategies, creating visual
             designs, leading art direction, and capturing portraits through
             photography.
           </p>
           <div className="flex justify-center gap-6">
-            <button className="w-full rounded-full bg-[#e03f8d] py-2 text-white duration-300 ease-in-out hover:bg-[#98314f]">
+            <Button className="w-full rounded-full bg-[#e03f8d] hover:bg-[#98314f]">
               Follow
-            </button>
-            <button className="w-full rounded-full border-2 border-[#898989] py-2 text-[#898989] duration-300 ease-in-out hover:border-black hover:text-black">
+            </Button>
+            <Button className="w-full rounded-full" variant={"outline"}>
               Message
-            </button>
+            </Button>
           </div>
         </div>
       </div>

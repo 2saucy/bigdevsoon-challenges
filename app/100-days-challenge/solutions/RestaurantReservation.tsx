@@ -24,7 +24,7 @@ const RestaurantReservation = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-day-12 bg-cover">
+    <main className="bg-day-12 flex min-h-screen items-center justify-center bg-cover">
       <div className="flex w-[450px] flex-col gap-4 overflow-hidden rounded-lg bg-slate-50 shadow-xl">
         <div className="relative h-[240px]">
           <img
