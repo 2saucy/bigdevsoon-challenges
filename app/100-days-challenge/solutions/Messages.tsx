@@ -33,8 +33,7 @@ const Messages = () => {
       user: {
         id: 1,
         name: "Son Goku",
-        profile_picture:
-          "/assets/100-days-challenge/day-22/goku-pfp.jpeg",
+        profile_picture: "/assets/100-days-challenge/day-22/goku-pfp.jpeg",
         status: "online",
       },
       messages: [
@@ -75,8 +74,7 @@ const Messages = () => {
       user: {
         id: 2,
         name: "Mikasa Ackerman",
-        profile_picture:
-          "/assets/100-days-challenge/day-22/mikasa-pfp.jpg",
+        profile_picture: "/assets/100-days-challenge/day-22/mikasa-pfp.jpg",
         status: "offline",
       },
       messages: [
@@ -102,8 +100,7 @@ const Messages = () => {
       user: {
         id: 3,
         name: "Gojo",
-        profile_picture:
-          "/assets/100-days-challenge/day-22/gojo-pfp.jpg",
+        profile_picture: "/assets/100-days-challenge/day-22/gojo-pfp.jpg",
         status: "away",
       },
       messages: [
@@ -150,8 +147,7 @@ const Messages = () => {
       user: {
         id: 5,
         name: "Paimon",
-        profile_picture:
-          "/assets/100-days-challenge/day-22/paimon-pfp.jpg",
+        profile_picture: "/assets/100-days-challenge/day-22/paimon-pfp.jpg",
         status: "busy",
       },
       messages: [
@@ -177,8 +173,7 @@ const Messages = () => {
       user: {
         id: 6,
         name: "Rick Sanchez",
-        profile_picture:
-          "/assets/100-days-challenge/day-22/rick-pfp.jpg",
+        profile_picture: "/assets/100-days-challenge/day-22/rick-pfp.jpg",
         status: "online",
       },
       messages: [
@@ -199,8 +194,7 @@ const Messages = () => {
       user: {
         id: 7,
         name: "Monkey D. Luffy",
-        profile_picture:
-          "/assets/100-days-challenge/day-22/luffy-pfp.jpg",
+        profile_picture: "/assets/100-days-challenge/day-22/luffy-pfp.jpg",
         status: "offline",
       },
       messages: [
@@ -226,8 +220,7 @@ const Messages = () => {
       user: {
         id: 8,
         name: "Giga Chad",
-        profile_picture:
-          "/assets/100-days-challenge/day-22/gigachad-pfp.jpg",
+        profile_picture: "/assets/100-days-challenge/day-22/gigachad-pfp.jpg",
         status: "offline",
       },
       messages: [
@@ -248,8 +241,7 @@ const Messages = () => {
       user: {
         id: 9,
         name: "Yunjiro Hanma",
-        profile_picture:
-          "/assets/100-days-challenge/day-22/yunjiro-pfp.jpeg",
+        profile_picture: "/assets/100-days-challenge/day-22/yunjiro-pfp.jpeg",
         status: "offline",
       },
       messages: [
@@ -294,7 +286,7 @@ const MessagesCard = ({
     .map((chat) => chat.user);
 
   return (
-    <div className="flex max-sm:h-screen max-sm:w-full md:h-[800px] md:w-[400px] flex-col overflow-hidden sm:rounded-3xl bg-slate-50 sm:shadow-lg">
+    <div className="flex flex-col overflow-hidden bg-slate-50 max-sm:h-screen max-sm:w-full sm:rounded-3xl sm:shadow-lg md:h-[800px] md:w-[400px]">
       <div className="space-y-4 p-4">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-bold">Messages</h1>
@@ -377,7 +369,7 @@ const Chat = ({
   setChatOpen: (chat: Chat | null) => void;
 }) => {
   return (
-    <div className="flex max-sm:h-screen max-sm:w-full h-[800px] w-[400px] flex-col overflow-hidden sm:rounded-3xl bg-slate-50 sm:shadow-lg">
+    <div className="flex h-[800px] w-[400px] flex-col overflow-hidden bg-slate-50 max-sm:h-screen max-sm:w-full sm:rounded-3xl sm:shadow-lg">
       <div className="relative flex flex-col items-center gap-2 p-4 shadow-md">
         <StatusAvatar {...chat.user} />
         <p className="text-xl font-bold">{chat.user.name}</p>

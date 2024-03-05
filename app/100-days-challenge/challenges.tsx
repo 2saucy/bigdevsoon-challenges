@@ -20,6 +20,7 @@ import UploadImages from "./solutions/UploadImages";
 import CardWallet from "./solutions/CardWallet";
 import PricingPlans from "./solutions/PricingPlans";
 import Messages from "./solutions/Messages";
+import HomePage from "./solutions/HomePage";
 
 type Challenges = {
   slug: string;
@@ -114,5 +115,9 @@ export const challenges: Challenges = [
   {
     slug: "messages",
     solution: <Messages />,
+  },
+  {
+    slug: "home-page",
+    solution: <HomePage />,
   },
 ];
