@@ -1,26 +1,27 @@
-import ProfileCard from "./solutions/ProfileCard";
-import AddToBag from "./solutions/AddToBag";
-import MobileNavigation from "./solutions/MobileNavigation";
-import ContactUs from "./solutions/ContactUs";
+import ProfileCard from "./solutions/profile-card";
+import AddToBag from "./solutions/add-to-bag";
+import MobileNavigation from "./solutions/mobile-navigation";
+import ContactUs from "./solutions/contact-us";
 import Recipe from "./solutions/Recipe";
-import ImageCarousel from "./solutions/ImageCarousel";
-import CreateAccount from "./solutions/CreateAccount";
-import MusicEvents from "./solutions/MusicEvents";
-import PasswordGenerator from "./solutions/PasswordGenerator";
-import SignUpPage from "./solutions/SignUpPage";
-import HotelBooking from "./solutions/HotelBooking";
-import RestaurantReservation from "./solutions/RestaurantReservation";
-import TaskBoard from "./solutions/TaskBoard";
-import ShoppingList from "./solutions/ShoppingList";
+import ImageCarousel from "./solutions/image-carousel";
+import CreateAccount from "./solutions/create-account";
+import MusicEvents from "./solutions/music-events";
+import PasswordGenerator from "./solutions/password-generator";
+import SignUpPage from "./solutions/sign-up-page";
+import HotelBooking from "./solutions/hotel-booking";
+import RestaurantReservation from "./solutions/restaurant-reservation";
+import TaskBoard from "./solutions/task-board";
+import ShoppingList from "./solutions/shopping-list";
 import Notifications from "./solutions/Notifications";
-import FurFriends from "./solutions/FurFriends";
-import ArticleSlider from "./solutions/ArticleSlider";
-import ImagesPreview from "./solutions/ImagesPreview";
-import UploadImages from "./solutions/UploadImages";
-import CardWallet from "./solutions/CardWallet";
-import PricingPlans from "./solutions/PricingPlans";
+import FurFriends from "./solutions/fur-friends";
+import ArticleSlider from "./solutions/article-slider";
+import ImagesPreview from "./solutions/images-preview";
+import UploadImages from "./solutions/upload-image";
+import CardWallet from "./solutions/card-wallet";
+import PricingPlans from "./solutions/pricing-plans";
 import Messages from "./solutions/Messages";
-import HomePage from "./solutions/HomePage";
+import HomePage from "./solutions/home-page";
+import MovieTicket from "./solutions/movie-ticket";
 
 type Challenges = {
   slug: string;
@@ -120,4 +121,8 @@ export const challenges: Challenges = [
     slug: "home-page",
     solution: <HomePage />,
   },
+  {
+    slug: "movie-ticket",
+    solution: <MovieTicket />,
+  }
 ];
