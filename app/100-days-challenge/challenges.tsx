@@ -22,6 +22,7 @@ import PricingPlans from "./solutions/pricing-plans";
 import Messages from "./solutions/Messages";
 import HomePage from "./solutions/home-page";
 import MovieTicket from "./solutions/movie-ticket";
+import MeetingSchedule from "./solutions/meeting-schedule";
 
 type Challenges = {
   slug: string;
@@ -124,5 +125,9 @@ export const challenges: Challenges = [
   {
     slug: "movie-ticket",
     solution: <MovieTicket />,
+  },
+  {
+    slug: "meeting-schedule",
+    solution: <MeetingSchedule />
   }
 ];
