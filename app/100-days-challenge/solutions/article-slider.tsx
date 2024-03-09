@@ -1,9 +1,14 @@
 "use client";
 import { FaShare } from "react-icons/fa";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-
 
 interface Post {
   authorImg: string;
@@ -64,10 +69,10 @@ const ArticleSlider = () => {
   ];
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100 relative">
+    <main className="relative flex min-h-screen items-center justify-center bg-gray-100">
       <Carousel className="w-3/4">
         <CarouselContent>
-          {posts.map(post => (
+          {posts.map((post) => (
             <CarouselItem key={post.title}>
               <Display {...post} />
             </CarouselItem>
@@ -82,21 +87,31 @@ const ArticleSlider = () => {
 
 export default ArticleSlider;
 
-
-const Display = ({ authorImg, author, date, title, description, img }: Post) => {
+const Display = ({
+  authorImg,
+  author,
+  date,
+  title,
+  description,
+  img,
+}: Post) => {
   return (
-    <div className="flex h-[400px] w-full bg-white rounded-xl overflow-hidden">
+    <div className="flex h-[400px] w-full overflow-hidden rounded-xl bg-white">
       <div className="basis-1/2 overflow-hidden">
         <img className="h-full w-full object-cover" src={img} />
       </div>
-      <div className="basis-1/2 flex flex-col justify-between gap-4 p-6">
+      <div className="flex basis-1/2 flex-col justify-between gap-4 p-6">
         <div className="space-y-4">
           <h1 className="text-2xl font-bold">{title}</h1>
           <p>{description}</p>
         </div>
         <div className="flex items-center justify-between gap-4">
           <Avatar>
-            <AvatarImage className="object-cover" src={authorImg} alt="Author" />
+            <AvatarImage
+              className="object-cover"
+              src={authorImg}
+              alt="Author"
+            />
           </Avatar>
           <div className="flex flex-1 flex-col">
             <span className="font-semibold">{author}</span>
@@ -110,7 +125,3 @@ const Display = ({ authorImg, author, date, title, description, img }: Post) => 
     </div>
   );
 };
-
-
-
-

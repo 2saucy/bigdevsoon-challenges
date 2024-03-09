@@ -2,7 +2,7 @@ import ProfileCard from "./solutions/profile-card";
 import AddToBag from "./solutions/add-to-bag";
 import MobileNavigation from "./solutions/mobile-navigation";
 import ContactUs from "./solutions/contact-us";
-import Recipe from "./solutions/Recipe";
+import Recipe from "./solutions/recipe";
 import ImageCarousel from "./solutions/image-carousel";
 import CreateAccount from "./solutions/create-account";
 import MusicEvents from "./solutions/music-events";
@@ -12,17 +12,18 @@ import HotelBooking from "./solutions/hotel-booking";
 import RestaurantReservation from "./solutions/restaurant-reservation";
 import TaskBoard from "./solutions/task-board";
 import ShoppingList from "./solutions/shopping-list";
-import Notifications from "./solutions/Notifications";
+import Notifications from "./solutions/notifications";
 import FurFriends from "./solutions/fur-friends";
 import ArticleSlider from "./solutions/article-slider";
 import ImagesPreview from "./solutions/images-preview";
 import UploadImages from "./solutions/upload-image";
 import CardWallet from "./solutions/card-wallet";
 import PricingPlans from "./solutions/pricing-plans";
-import Messages from "./solutions/Messages";
+import Messages from "./solutions/messages";
 import HomePage from "./solutions/home-page";
 import MovieTicket from "./solutions/movie-ticket";
 import MeetingSchedule from "./solutions/meeting-schedule";
+import JobBoard from "./solutions/job-board";
 
 type Challenges = {
   slug: string;
@@ -128,6 +129,10 @@ export const challenges: Challenges = [
   },
   {
     slug: "meeting-schedule",
-    solution: <MeetingSchedule />
-  }
+    solution: <MeetingSchedule />,
+  },
+  {
+    slug: "job-board",
+    solution: <JobBoard />,
+  },
 ];

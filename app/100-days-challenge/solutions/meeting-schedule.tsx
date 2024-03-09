@@ -1,26 +1,33 @@
-"use client"
+"use client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
 import clsx from "clsx";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaCalendarAlt, FaPlus } from "react-icons/fa";
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Popover, PopoverContent } from "@/components/ui/popover";
 import { PopoverTrigger } from "@radix-ui/react-popover";
 import { format } from "date-fns";
 import { Input } from "@/components/ui/input";
 import { IoIosArrowBack, IoIosTime } from "react-icons/io";
 
-
 const MeetingSchedule = () => {
-  const [activeView, setActiveView] = useState<"calendar" | "todos" | "form">("calendar");
+  const [activeView, setActiveView] = useState<"calendar" | "todos" | "form">(
+    "calendar",
+  );
 
   return (
-    <main className="min-h-screen bg-orange-400 flex items-center justify-center">
+    <main className="flex min-h-screen items-center justify-center bg-orange-400">
       {activeView === "calendar" ? (
         <CalendarComponent setActiveView={setActiveView} />
       ) : activeView === "todos" ? (
@@ -30,27 +37,30 @@ const MeetingSchedule = () => {
       )}
     </main>
   );
-}
+};
 
 export default MeetingSchedule;
 
-
-const CalendarComponent = ({ setActiveView }: { setActiveView: (activeView: "calendar" | "todos" | "form") => void }) => {
+const CalendarComponent = ({
+  setActiveView,
+}: {
+  setActiveView: (activeView: "calendar" | "todos" | "form") => void;
+}) => {
   return (
-    <div className="bg-white p-4 rounded-xl shadow-md w-[500px] aspect-[1/1] flex flex-col items-center justify-center">
-      <Calendar 
-        mode="single" 
-        onSelect={() => setActiveView("todos")} 
-        className="flex flex-col w-full" 
+    <div className="flex aspect-[1/1] w-[500px] flex-col items-center justify-center rounded-xl bg-white p-4 shadow-md">
+      <Calendar
+        mode="single"
+        onSelect={() => setActiveView("todos")}
+        className="flex w-full flex-col"
         classNames={{
           root: "w-full h-full flex flex-col justify-between",
           month: "w-full space-y-4",
           table: "flex flex-col items-center",
-        }} 
+        }}
       />
     </div>
-  )
-}
+  );
+};
 
 interface Todo {
   todo: string;
@@ -59,99 +69,121 @@ interface Todo {
   timeEnd: string;
 }
 
-const Todos = ({ setActiveView }: { setActiveView: (activeView: "calendar" | "todos" | "form") => void }) => {
+const Todos = ({
+  setActiveView,
+}: {
+  setActiveView: (activeView: "calendar" | "todos" | "form") => void;
+}) => {
   const todos: Todo[] = [
     {
       todo: "Weekly Plant Care Workshop",
       status: "done",
       timeStart: "10:00 AM",
-      timeEnd: "11:00 AM"
+      timeEnd: "11:00 AM",
     },
     {
       todo: "Succulent Succulents Seminar",
       status: "in progress",
       timeStart: "13:00 PM",
-      timeEnd: "14:00 PM"
+      timeEnd: "14:00 PM",
     },
     {
       todo: "Monthly Plant Swap",
       status: "not started",
       timeStart: "14:00 PM",
-      timeEnd: "15:00 PM"
+      timeEnd: "15:00 PM",
     },
     {
       todo: "Weekly Plant Care Workshop",
       status: "done",
       timeStart: "10:00 AM",
-      timeEnd: "11:00 AM"
+      timeEnd: "11:00 AM",
     },
     {
       todo: "Succulent Succulents Seminar",
       status: "in progress",
       timeStart: "13:00 PM",
-      timeEnd: "14:00 PM"
+      timeEnd: "14:00 PM",
     },
     {
       todo: "Monthly Plant Swap",
       status: "not started",
       timeStart: "14:00 PM",
-      timeEnd: "15:00 PM"
+      timeEnd: "15:00 PM",
     },
     {
       todo: "Weekly Plant Care Workshop",
       status: "done",
       timeStart: "10:00 AM",
-      timeEnd: "11:00 AM"
+      timeEnd: "11:00 AM",
     },
     {
       todo: "Succulent Succulents Seminar",
       status: "in progress",
       timeStart: "13:00 PM",
-      timeEnd: "14:00 PM"
+      timeEnd: "14:00 PM",
     },
     {
       todo: "Monthly Plant Swap",
       status: "not started",
       timeStart: "14:00 PM",
-      timeEnd: "15:00 PM"
-    }
-  ]
+      timeEnd: "15:00 PM",
+    },
+  ];
 
   return (
-    <div className="bg-white p-4 rounded-xl shadow-md space-y-4 w-[500px] aspect-[1/1]">
-      <Button variant="secondary" size="icon" onClick={() => setActiveView("calendar")}>
+    <div className="aspect-[1/1] w-[500px] space-y-4 rounded-xl bg-white p-4 shadow-md">
+      <Button
+        variant="secondary"
+        size="icon"
+        onClick={() => setActiveView("calendar")}
+      >
         <IoIosArrowBack />
       </Button>
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Todos</h1>
-        <Button variant="secondary" size="icon" className="bg-[#f1ff4f] text-black" onClick={() => setActiveView("form")}>
+        <Button
+          variant="secondary"
+          size="icon"
+          className="bg-[#f1ff4f] text-black"
+          onClick={() => setActiveView("form")}
+        >
           <FaPlus className="h-4 w-4" />
         </Button>
       </div>
-      <div className="space-y-4 bg-slate-100 h-full p-4 rounded-xl overflow-y-scroll">
+      <div className="h-full space-y-4 overflow-y-scroll rounded-xl bg-slate-100 p-4">
         {todos.map(({ todo, status, timeStart, timeEnd }, i) => {
           const statusColor = {
-            "done": "bg-green-400",
+            done: "bg-green-400",
             "in progress": "bg-yellow-400",
-            "not started": "bg-red-400"
-          }
+            "not started": "bg-red-400",
+          };
 
           return (
             <div key={i} className="flex items-center justify-between gap-4">
-              <span className="px-2 aspect-square rounded-full bg-slate-500" />
+              <span className="aspect-square rounded-full bg-slate-500 px-2" />
               <div className="flex-1">
                 <h2 className="font-semibold">{todo}</h2>
-                <p className="text-sm opacity-50">{timeStart} - {timeEnd}</p>
+                <p className="text-sm opacity-50">
+                  {timeStart} - {timeEnd}
+                </p>
               </div>
-              <Badge variant="outline" className={clsx("text-slate-50", statusColor[status])}>{status.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}</Badge>
+              <Badge
+                variant="outline"
+                className={clsx("text-slate-50", statusColor[status])}
+              >
+                {status
+                  .split(" ")
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" ")}
+              </Badge>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
-
+  );
+};
 
 const FormSchema = z.object({
   title: z.string(),
@@ -160,25 +192,36 @@ const FormSchema = z.object({
   }),
   meeting_start: z.string(),
   meeting_end: z.string(),
-})
+});
 
-const AddMeeting = ({ setActiveView }: { setActiveView: (activeView: "calendar" | "todos" | "form") => void }) => {
+const AddMeeting = ({
+  setActiveView,
+}: {
+  setActiveView: (activeView: "calendar" | "todos" | "form") => void;
+}) => {
   const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema)
-  })
+    resolver: zodResolver(FormSchema),
+  });
 
   function onSubmit(values: z.infer<typeof FormSchema>) {
-    console.log(values)
+    console.log(values);
   }
 
   return (
-    <div className="bg-white space-y-4 p-4 rounded-xl shadow-md w-[500px] aspect-[1/1]">
-      <Button variant="secondary" size="icon" onClick={() => setActiveView("todos")}>
+    <div className="aspect-[1/1] w-[500px] space-y-4 rounded-xl bg-white p-4 shadow-md">
+      <Button
+        variant="secondary"
+        size="icon"
+        onClick={() => setActiveView("todos")}
+      >
         <IoIosArrowBack />
       </Button>
       <h1 className="text-2xl font-bold">Add meeting</h1>
       <Form {...form}>
-        <form className="flex flex-col justify-between gap-4 h-full" onSubmit={form.handleSubmit(onSubmit)}>
+        <form
+          className="flex h-full flex-col justify-between gap-4"
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
           <div className="space-y-4">
             <FormField
               control={form.control}
@@ -206,9 +249,13 @@ const AddMeeting = ({ setActiveView }: { setActiveView: (activeView: "calendar" 
                       <FormControl>
                         <Button variant="outline">
                           {field.value ? (
-                            <span className="mr-auto font-light">{format(field.value, "PPP")}</span>
+                            <span className="mr-auto font-light">
+                              {format(field.value, "PPP")}
+                            </span>
                           ) : (
-                            <span className="mr-auto font-light">Pick a date</span>
+                            <span className="mr-auto font-light">
+                              Pick a date
+                            </span>
                           )}
                         </Button>
                       </FormControl>
@@ -258,9 +305,15 @@ const AddMeeting = ({ setActiveView }: { setActiveView: (activeView: "calendar" 
               />
             </div>
           </div>
-          <Button variant="ghost" className="font-semibold bg-[#f1ff4f] text-black w-full shadow-lg" type="submit">Save</Button>
+          <Button
+            variant="ghost"
+            className="w-full bg-[#f1ff4f] font-semibold text-black shadow-lg"
+            type="submit"
+          >
+            Save
+          </Button>
         </form>
       </Form>
     </div>
-  )
-}
+  );
+};
