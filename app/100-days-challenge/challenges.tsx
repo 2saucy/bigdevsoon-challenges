@@ -24,6 +24,7 @@ import HomePage from "./solutions/home-page";
 import MovieTicket from "./solutions/movie-ticket";
 import MeetingSchedule from "./solutions/meeting-schedule";
 import JobBoard from "./solutions/job-board";
+import VideoPlayer from "./solutions/video-player";
 
 type Challenges = {
   slug: string;
@@ -135,4 +136,8 @@ export const challenges: Challenges = [
     slug: "job-board",
     solution: <JobBoard />,
   },
+  {
+    slug: "video-player",
+    solution: <VideoPlayer />,
+  }
 ];
