@@ -26,6 +26,10 @@ import MeetingSchedule from "./solutions/meeting-schedule";
 import JobBoard from "./solutions/job-board";
 import VideoPlayer from "./solutions/video-player";
 import Invoices from "./solutions/invoices";
+import Dashboard from "./solutions/dashboard";
+import Newsletter from "./solutions/newsletter";
+import UserProfile from "./solutions/user-profile";
+import RateUs from "./solutions/rate-us";
 
 type Challenges = {
   slug: string;
@@ -143,6 +147,22 @@ export const challenges: Challenges = [
   },
   {
     slug: "invoices",
-    solution: <Invoices />
-  }
+    solution: <Invoices />,
+  },
+  {
+    slug: "newsletter",
+    solution: <Newsletter />,
+  },
+  {
+    slug: "dashboard",
+    solution: <Dashboard />,
+  },
+  {
+    slug: "rate-us",
+    solution: <RateUs />,
+  },
+  {
+    slug: "user-profile",
+    solution: <UserProfile />,
+  },
 ];
