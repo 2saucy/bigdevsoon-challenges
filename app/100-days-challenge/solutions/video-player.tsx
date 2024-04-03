@@ -6,6 +6,8 @@ import { IoEye } from "react-icons/io5";
 import { IoMdHeart, IoMdHeartEmpty, IoMdShare } from "react-icons/io";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import { getAssetsDir } from "../utils";
 
 interface User {
   name: string;
@@ -25,25 +27,27 @@ interface Video {
 }
 
 const VideoPlayer = () => {
+  const assetsDir = getAssetsDir(usePathname());
+
   const video: Video = {
     miniature: "",
     title: "Longboard Session #3 - Original Skateboards",
     url: "https://www.youtube.com/watch?v=j1CUwDTF9Bw&ab_channel=OriginalSkateboards",
     user: {
       name: "Original Skateboards",
-      profile_picture: "/assets/100-days-challenge/day-29/pfp.jpg",
+      profile_picture: "",
       subscribers: 130500,
     },
     views: 12000000,
     likes: 360,
     related_videos: [
       {
-        miniature: "/assets/100-days-challenge/day-29/1.jpg",
+        miniature: `${assetsDir}/1.jpg`,
         title: "Best Longboard Tricks 2022",
         url: "https://www.youtube.com/watch?v=1&ab_channel=BestLongboardTricks",
         user: {
           name: "Extreme Longboarders",
-          profile_picture: "/assets/100-days-challenge/day-29/1-pfp.jpg",
+          profile_picture: "",
           subscribers: 50000,
         },
         views: 5000000,
@@ -52,12 +56,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-02T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/2.jpg",
+        miniature: `${assetsDir}/2.jpg`,
         title: "Longboarding Across the USA",
         url: "https://www.youtube.com/watch?v=2&ab_channel=LongboardUSA",
         user: {
           name: "Longboard USA",
-          profile_picture: "/assets/100-days-challenge/day-29/2-pfp.jpg",
+          profile_picture: "",
           subscribers: 75000,
         },
         views: 8000000,
@@ -66,12 +70,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-03T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/3.jpg",
+        miniature: `${assetsDir}/3.jpg`,
         title: "Downhill Longboarding Championships",
         url: "https://www.youtube.com/watch?v=3&ab_channel=LongboardChampionships",
         user: {
           name: "Longboard Championships",
-          profile_picture: "/assets/100-days-challenge/day-29/3-pfp.jpg",
+          profile_picture: "",
           subscribers: 30000,
         },
         views: 3000000,
@@ -80,12 +84,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-04T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/4.jpg",
+        miniature: `${assetsDir}/4.jpg`,
         title: "Longboard Freestyle Tricks Tutorial",
         url: "https://www.youtube.com/watch?v=4&ab_channel=FreestyleLongboard",
         user: {
           name: "Freestyle Longboard",
-          profile_picture: "/assets/100-days-challenge/day-29/4-pfp.jpg",
+          profile_picture: "",
           subscribers: 40000,
         },
         views: 4000000,
@@ -94,12 +98,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-05T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/5.jpg",
+        miniature: `${assetsDir}/5.jpg`,
         title: "Longboard Maintenance Tips",
         url: "https://www.youtube.com/watch?v=5&ab_channel=LongboardMaintenance",
         user: {
           name: "Longboard Maintenance",
-          profile_picture: "/assets/100-days-challenge/day-29/5-pfp.jpg",
+          profile_picture: "",
           subscribers: 20000,
         },
         views: 2000000,
@@ -108,12 +112,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-06T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/6.jpg",
+        miniature: `${assetsDir}/6.jpg`,
         title: "Longboard Dance Competition Highlights",
         url: "https://www.youtube.com/watch?v=6&ab_channel=LongboardDance",
         user: {
           name: "Longboard Dance",
-          profile_picture: "/assets/100-days-challenge/day-29/6-pfp.jpg",
+          profile_picture: "",
           subscribers: 60000,
         },
         views: 6000000,
@@ -122,12 +126,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-07T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/7.jpg",
+        miniature: `${assetsDir}/7.jpg`,
         title: "Longboard Racing World Cup",
         url: "https://www.youtube.com/watch?v=7&ab_channel=LongboardRacing",
         user: {
           name: "Longboard Racing",
-          profile_picture: "/assets/100-days-challenge/day-29/7-pfp.jpg",
+          profile_picture: "",
           subscribers: 90000,
         },
         views: 9000000,
@@ -136,12 +140,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-08T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/8.jpg",
+        miniature: `${assetsDir}/8.jpg`,
         title: "Longboard Documentary: The History of Longboarding",
         url: "https://www.youtube.com/watch?v=8&ab_channel=LongboardHistory",
         user: {
           name: "Longboard History",
-          profile_picture: "/assets/100-days-challenge/day-29/8-pfp.jpg",
+          profile_picture: "",
           subscribers: 10000,
         },
         views: 1000000,
@@ -150,12 +154,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-09T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/9.jpg",
+        miniature: `${assetsDir}/9.jpg`,
         title: "Longboard Tips for Beginners",
         url: "https://www.youtube.com/watch?v=9&ab_channel=LongboardBeginners",
         user: {
           name: "Longboard Beginners",
-          profile_picture: "/assets/100-days-challenge/day-29/9-pfp.jpg",
+          profile_picture: "",
           subscribers: 15000,
         },
         views: 1500000,
@@ -164,12 +168,12 @@ const VideoPlayer = () => {
         createdAt: "2022-01-10T00:00:00",
       },
       {
-        miniature: "/assets/100-days-challenge/day-29/10.jpg",
+        miniature: `${assetsDir}/10.jpg`,
         title: "Longboard Freeride Session",
         url: "https://www.youtube.com/watch?v=10&ab_channel=LongboardFreeride",
         user: {
           name: "Longboard Freeride",
-          profile_picture: "/assets/100-days-challenge/day-29/10-pfp.jpg",
+          profile_picture: "",
           subscribers: 25000,
         },
         views: 2500000,

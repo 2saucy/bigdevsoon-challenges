@@ -2,15 +2,18 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import { getAssetsDir } from "../utils";
 
 const ImageCarousel = () => {
+  const assetsDir = getAssetsDir(usePathname());
   const images: string[] = [
-    "andreas-rasmussen-Iw12lY3koDk-unsplash.jpg",
-    "cristian-castillo-73pyV0JJOmE-unsplash.jpg",
-    "jonatan-pie-xgTMSz6kegE-unsplash.jpg",
-    "justin-veenema-NH1d0xX6Ldk-unsplash.jpg",
-    "nick-karvounis--KNNQqX9rqY-unsplash.jpg",
-    "paweldotio-XWTNFVCTS8E-unsplash.jpg",
+    `${assetsDir}/image-1.jpg`,
+    `${assetsDir}/image-2.jpg`,
+    `${assetsDir}/image-3.jpg`,
+    `${assetsDir}/image-4.jpg`,
+    `${assetsDir}/image-5.jpg`,
+    `${assetsDir}/image-6.jpg`,
   ];
 
   const [currentImg, setCurrentImg] = useState(images[0]);
@@ -53,10 +56,7 @@ const ImageCarousel = () => {
           <FaArrowLeft className="h-6 w-6 text-white" />
         </button>
         <div className="h-[60vh] w-[80vw] overflow-hidden rounded-3xl">
-          <img
-            className="h-full w-full object-cover"
-            src={"/assets/100-days-challenge/day-6/" + currentImg}
-          />
+          <img className="h-full w-full object-cover" src={currentImg} />
         </div>
         <button
           className="rounded-full bg-slate-700 p-1.5 duration-100 ease-out hover:scale-110 max-md:hidden"
@@ -66,14 +66,14 @@ const ImageCarousel = () => {
         </button>
       </div>
       <div className="flex w-[80vw] items-center justify-center gap-4 overflow-x-auto p-4">
-        {images.map((img, i) => (
+        {images.map((image, i) => (
           <div key={i} className="h-24 w-24 shrink-0">
             <img
-              src={"/assets/100-days-challenge/day-6/" + img}
-              onClick={() => setCurrentImg(img)}
+              src={image}
+              onClick={() => setCurrentImg(image)}
               className={clsx(
                 "h-full w-full cursor-pointer object-cover duration-100 ease-in-out",
-                img === currentImg &&
+                image === currentImg &&
                   "outline outline-2 outline-offset-4 outline-slate-50",
               )}
             />

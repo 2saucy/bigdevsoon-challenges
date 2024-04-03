@@ -1,3 +1,4 @@
+"use client";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { CiMoneyBill } from "react-icons/ci";
@@ -10,24 +11,26 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
+import { getAssetsDir } from "../utils";
+import { usePathname } from "next/navigation";
 
 const UserProfile = () => {
+  const assetsDir = getAssetsDir(usePathname());
+  const pfp = `${assetsDir}/pfp.jpg`;
+
   return (
     <main className="relative min-h-screen bg-slate-100">
       <div className="absolute left-1/2 top-24 flex w-96 -translate-x-1/2 items-center justify-between rounded-lg bg-white p-2 shadow-lg">
         <div className="flex flex-1 items-center gap-2">
           <Avatar>
-            <AvatarImage
-              className="object-cover"
-              src="/assets/100-days-challenge/day-24/spirited-away.jpg"
-            />
+            <AvatarImage className="object-cover" src={pfp} />
           </Avatar>
           <h2 className="font-bold">David</h2>
           <Badge className="bg-violet-300 text-violet-600" variant="outline">
             PRO
           </Badge>
         </div>
-        <ProfilePopover />
+        <ProfilePopover pfp={pfp} />
       </div>
     </main>
   );
@@ -35,7 +38,7 @@ const UserProfile = () => {
 
 export default UserProfile;
 
-const ProfilePopover = () => {
+const ProfilePopover = ({ pfp }: { pfp: string }) => {
   const routes = [
     {
       label: "Profile Settings",
@@ -69,10 +72,7 @@ const ProfilePopover = () => {
       <PopoverContent className="absolute -right-9 top-0 my-4 w-96 space-y-4">
         <div className="flex items-center gap-2">
           <Avatar>
-            <AvatarImage
-              className="object-cover"
-              src="/assets/100-days-challenge/day-24/spirited-away.jpg"
-            />
+            <AvatarImage className="object-cover" src={pfp} />
           </Avatar>
           <div>
             <div className="flex items-center gap-2">

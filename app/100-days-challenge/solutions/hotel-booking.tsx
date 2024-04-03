@@ -1,27 +1,23 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 import { FaChevronDown, FaChevronUp, FaLocationDot } from "react-icons/fa6";
+import { getAssetsDir } from "../utils";
+import { Button } from "@/components/ui/button";
+import clsx from "clsx";
 
 const HotelBooking = () => {
   return (
-    <main className="bg-day-11 flex min-h-screen items-center justify-center bg-cover bg-center">
-      <Card>
+    <main className="flex min-h-screen items-center justify-center bg-hotel-booking bg-cover bg-center p-12">
+      <div className="flex gap-6 rounded-xl bg-slate-50 p-6 shadow-xl max-lg:flex-col">
         <FormContainer />
         <ImageContainer />
-      </Card>
+      </div>
     </main>
   );
 };
 
 export default HotelBooking;
-
-const Card = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="flex gap-6 bg-slate-50 p-6 shadow-xl max-md:flex-col max-sm:min-h-screen sm:my-12 sm:w-3/4 sm:rounded-2xl md:flex-row">
-      {children}
-    </div>
-  );
-};
 
 type FormData = {
   checkIn: string;
@@ -107,14 +103,19 @@ const FormContainer = () => {
 };
 
 const ImageContainer = () => {
+  const assetsDir = getAssetsDir(usePathname());
+  const images = [
+    `${assetsDir}/image-1.jpg`,
+    `${assetsDir}/image-2.jpg`,
+    `${assetsDir}/image-3.jpg`,
+  ];
+
+  const [currentImage, setCurrentImage] = useState(images[0]);
+
   return (
     <div className="flex basis-2/3 flex-col space-y-4">
-      <div className="relative h-[80%]">
-        <img
-          className="h-full w-full object-cover"
-          src="/assets/100-days-challenge/day-11/edvin-johansson-rlwE8f8anOc-unsplash.jpg"
-          alt=""
-        />
+      <div className="relative aspect-square h-[500px]">
+        <img className="h-full w-full object-cover" src={currentImage} />
         <div className="absolute bottom-4 left-4 text-slate-50">
           <p className="font-semibold">Golden Apartments</p>
           <p className="flex items-center gap-2 font-light">
@@ -123,25 +124,19 @@ const ImageContainer = () => {
           </p>
         </div>
       </div>
-      <div className="flex h-[20%] gap-2">
-        <div className="basis-1/3">
-          <img
-            className="h-full w-full object-cover"
-            src="/assets/100-days-challenge/day-11/edvin-johansson-rlwE8f8anOc-unsplash.jpg"
-          />
-        </div>
-        <div className="basis-1/3">
-          <img
-            className="h-full w-full object-cover"
-            src="/assets/100-days-challenge/day-11/bhumil-chheda-o1lALNEP2BQ-unsplash.jpg"
-          />
-        </div>
-        <div className="basis-1/3">
-          <img
-            className="h-full w-full object-cover"
-            src="/assets/100-days-challenge/day-11/anmol-seth-hDbCjHNdF48-unsplash.jpg"
-          />
-        </div>
+      <div className="flex flex-1 items-center justify-center gap-2">
+        {images.map((image) => (
+          <Button
+            key={image}
+            onClick={() => setCurrentImage(image)}
+            className={clsx(
+              "aspect-square h-[120px] overflow-hidden rounded-lg p-0",
+              currentImage === image && "border-4 border-[#ff8a00]",
+            )}
+          >
+            <img className="h-full w-full object-cover" src={image} />
+          </Button>
+        ))}
       </div>
     </div>
   );

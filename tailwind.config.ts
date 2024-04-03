@@ -32,6 +32,31 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        "explore-flights":
+          "url('/assets/100-days-challenge/explore-flights/background.jpg')",
+
+        "shopping-list":
+          "url('/assets/100-days-challenge/shopping-list/background.jpg')",
+
+        "password-generator":
+          "url('/assets/100-days-challenge/password-generator/background.jpg')",
+
+        "sign-up-page":
+          "url('/assets/100-days-challenge/sign-up-page/background.jpg')",
+
+        "restaurant-reservation":
+          "url('/assets/100-days-challenge/restaurant-reservation/background.jpg')",
+
+        "create-account":
+          "url('/assets/100-days-challenge/create-account/background.jpg')",
+
+        "hotel-booking":
+          "url('/assets/100-days-challenge/hotel-booking/background.jpg')",
+
+        "music-festival":
+          "url('/assets/100-days-challenge/music-festival/background.jpg')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

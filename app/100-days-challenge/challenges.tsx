@@ -30,6 +30,19 @@ import Dashboard from "./solutions/dashboard";
 import Newsletter from "./solutions/newsletter";
 import UserProfile from "./solutions/user-profile";
 import RateUs from "./solutions/rate-us";
+import SleepApp from "./solutions/sleep-app";
+import ExploreFlights from "./solutions/explore-flights";
+import MusicFestival from "./solutions/music-festival";
+import QRCodeScanner from "./solutions/qr-code-scanner";
+import FAQ from "./solutions/faq";
+import CreateWorkspace from "./solutions/create-workspace";
+import SettingsAppearance from "./solutions/settings-appearance";
+import PlayerProfile from "./solutions/player-profile";
+import HostingFeatures from "./solutions/hosting-features";
+import FriendRequest from "./solutions/friend-request";
+import DownloadApp from "./solutions/download-app";
+import AppNavigation from "./solutions/app-navigation";
+import LanguageApp from "./solutions/language-app";
 
 type Challenges = {
   slug: string;
@@ -164,5 +177,57 @@ export const challenges: Challenges = [
   {
     slug: "user-profile",
     solution: <UserProfile />,
+  },
+  {
+    slug: "sleep-app",
+    solution: <SleepApp />,
+  },
+  {
+    slug: "explore-flights",
+    solution: <ExploreFlights />,
+  },
+  {
+    slug: "music-festival",
+    solution: <MusicFestival />,
+  },
+  {
+    slug: "qr-code-scanner",
+    solution: <QRCodeScanner />,
+  },
+  {
+    slug: "faq",
+    solution: <FAQ />,
+  },
+  {
+    slug: "create-workspace",
+    solution: <CreateWorkspace />,
+  },
+  {
+    slug: "settings-appearance",
+    solution: <SettingsAppearance />,
+  },
+  {
+    slug: "player-profile",
+    solution: <PlayerProfile />,
+  },
+  {
+    slug: "hosting-features",
+    solution: <HostingFeatures />,
+  },
+  {
+    slug: "friend-request",
+    solution: <FriendRequest />,
+  },
+  {
+    slug: "download-app",
+    solution: <DownloadApp />,
+  },
+  {
+    slug: "app-navigation",
+    solution: <AppNavigation />,
+  },
+  {
+    slug: "language-app",
+    solution: <LanguageApp />,
   },
 ];

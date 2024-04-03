@@ -1,6 +1,8 @@
 "use client";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { getAssetsDir } from "../utils";
 
 interface ProductInfo {
   brand: string;
@@ -12,11 +14,13 @@ interface ProductInfo {
 }
 
 const AddToBag = () => {
+  const assetsDir = getAssetsDir(usePathname());
+
   const product = {
     images: [
-      "/assets/100-days-challenge/day-2/1.jpg",
-      "/assets/100-days-challenge/day-2/2.jpg",
-      "/assets/100-days-challenge/day-2/3.jpg",
+      `${assetsDir}/polo-1.jpg`,
+      `${assetsDir}/polo-2.jpg`,
+      `${assetsDir}/polo-3.jpg`,
     ],
     brand: "Polo Ralph",
     name: "Custom Fit Polo Bear Oxford Shirt",

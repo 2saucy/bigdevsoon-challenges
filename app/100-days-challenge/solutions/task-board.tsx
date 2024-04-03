@@ -1,7 +1,13 @@
+"use client";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import { FaPlus } from "react-icons/fa";
+import { getAssetsDir } from "../utils";
 
 const TaskBoard = () => {
+  const assetsDir = getAssetsDir(usePathname());
+  const pfpImage = `${assetsDir}/pfp.jpg`;
+
   const lists = [
     {
       id: 1,
@@ -10,17 +16,16 @@ const TaskBoard = () => {
         {
           level: "High",
           date: "2/15/24",
-          image:
-            "/assets/100-days-challenge/day-13/jr-korpa-9XngoIpxcEo-unsplash.jpg",
+          image: `${assetsDir}/1.jpg`,
           title: "Update Website Homepage",
           description:
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
           participants: [
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
           ],
         },
@@ -39,21 +44,20 @@ const TaskBoard = () => {
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
           participants: [
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
           ],
         },
         {
           level: "Medium",
           date: "2/15/24",
-          image:
-            "/assets/100-days-challenge/day-13/travis-leery-E4BKNmb31fA-unsplash.jpg",
+          image: `${assetsDir}/2.jpg`,
           title: "Social Media Campaign",
           description:
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
           participants: [
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
           ],
         },
@@ -72,7 +76,7 @@ const TaskBoard = () => {
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
           participants: [
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
           ],
         },
@@ -85,37 +89,35 @@ const TaskBoard = () => {
         {
           level: "Low",
           date: "2/15/24",
-          image:
-            "/assets/100-days-challenge/day-13/travis-leery-E4BKNmb31fA-unsplash.jpg",
+          image: `${assetsDir}/2.jpg`,
           title: "Content Creation - Blog Post",
           description:
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
           participants: [
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
           ],
         },
         {
           level: "Medium",
           date: "2/15/24",
-          image:
-            "/assets/100-days-challenge/day-13/jr-korpa-9XngoIpxcEo-unsplash.jpg",
+          image: `${assetsDir}/2.jpg`,
           title: "IT Security Audit",
           description:
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iusto ducimus quas! Odio, quis atque repellendus dignissimos architecto reprehenderit aut.",
           participants: [
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
             {
-              image: "/assets/100-days-challenge/day-13/profile.jpg",
+              image: pfpImage,
             },
           ],
         },

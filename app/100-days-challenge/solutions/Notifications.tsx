@@ -4,13 +4,16 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { Attachment, Notification, Notifications } from "../types";
 
 import { MdFileDownload } from "react-icons/md";
+import { usePathname } from "next/navigation";
+import { getAssetsDir } from "../utils";
 
 const Notifications = () => {
+  const assetsDir = getAssetsDir(usePathname());
+
   const notifications: Notifications = [
     {
       id: 1,
-      profile_picture:
-        "/assets/100-days-challenge/day-15/microsoft-365-7mBictB_urk-unsplash.jpg",
+      profile_picture: `${assetsDir}/pfp-1.jpg`,
       name: "Jane Anne",
       type: "joined_group",
       date: "2024-01-01T00:00:00",
@@ -21,8 +24,7 @@ const Notifications = () => {
     },
     {
       id: 1,
-      profile_picture:
-        "/assets/100-days-challenge/day-15/deepak-mahajan-8ig-SzHpqDw-unsplash.jpg",
+      profile_picture: `${assetsDir}/pfp-2.jpg`,
       name: "Ryan",
       type: "mentioned_in_comment",
       date: "2024-01-01T00:00:00",
@@ -30,16 +32,14 @@ const Notifications = () => {
     },
     {
       id: 1,
-      profile_picture:
-        "/assets/100-days-challenge/day-15/irene-strong-v2aKnjMbP_k-unsplash.jpg",
+      profile_picture: `${assetsDir}/pfp-3.jpg`,
       name: "Billy Doe",
       type: "friend_request",
       date: "2024-01-01T00:00:00",
     },
     {
       id: 1,
-      profile_picture:
-        "/assets/100-days-challenge/day-15/qu-nh-le-m-nh-dp3CS405UZM-unsplash.jpg",
+      profile_picture: `${assetsDir}/pfp-4.jpg`,
       name: "Maria Hernandez",
       type: "uploaded_attachments",
       date: "2024-01-01T00:00:00",
@@ -50,13 +50,13 @@ const Notifications = () => {
       attachments: [
         {
           type: "file",
-          img: "/assets/100-days-challenge/day-15/jr-korpa-9XngoIpxcEo-unsplash.jpg",
+          img: `${assetsDir}/attachment-miniature.jpg`,
           file_name: "Background Images",
           size: "1.4GB",
         },
         {
           type: "link",
-          img: "/assets/100-days-challenge/day-15/jr-korpa-9XngoIpxcEo-unsplash.jpg",
+          img: `${assetsDir}/attachment-miniature.jpg`,
           title: "App Generator - The technology agnostic way",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, possimus.",

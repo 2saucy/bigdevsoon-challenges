@@ -1,3 +1,5 @@
+"use client";
+import { usePathname } from "next/navigation";
 import { BsPersonCircle } from "react-icons/bs";
 import { FaLocationDot, FaPeopleGroup } from "react-icons/fa6";
 import { FiHome, FiMail } from "react-icons/fi";
@@ -5,8 +7,12 @@ import { ImStatsDots } from "react-icons/im";
 import { IoMdMail, IoMdNotifications } from "react-icons/io";
 import { IoPeopleSharp, IoPerson, IoSettingsSharp } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
+import { getAssetsDir } from "../utils";
 
 const MobileNavigation = () => {
+  const assetsDir = getAssetsDir(usePathname());
+  const pfp = `${assetsDir}/pfp.jpg`;
+
   const items = [
     {
       name: "Personal Data",
@@ -47,7 +53,7 @@ const MobileNavigation = () => {
         <div className="flex items-center gap-6">
           <img
             className="h-[60px] w-[60px] rounded-xl object-cover"
-            src="/assets/100-days-challenge/day-3/profile.jpg"
+            src={pfp}
           />
           <div>
             <h1 className="text-sm font-bold">Lisa Richardson</h1>

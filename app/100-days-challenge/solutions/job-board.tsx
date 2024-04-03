@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { CiWallet } from "react-icons/ci";
 import { IoSearchSharp } from "react-icons/io5";
+import { getAssetsDir } from "../utils";
+import { usePathname } from "next/navigation";
 
 const JobBoard = () => {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
@@ -56,9 +58,11 @@ const SearchResultsContainer = ({
 }: {
   onJobClick: (job: Job) => void;
 }) => {
+  const assetsDir = getAssetsDir(usePathname());
+
   const jobs = [
     {
-      image: "/assets/100-days-challenge/day-26/google.png",
+      image: `${assetsDir}/google.png`,
       position: "Frontend Developer",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit consequuntur ullam exercitationem illum velit perferendis repellendus accusantium vitae debitis autem!",
@@ -67,7 +71,7 @@ const SearchResultsContainer = ({
       salary: "$2000 - $3000",
     },
     {
-      image: "/assets/100-days-challenge/day-26/google.png",
+      image: `${assetsDir}/google.png`,
       position: "Backend Developer",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit consequuntur ullam exercitationem illum velit perferendis repellendus accusantium vitae debitis autem!",
@@ -76,7 +80,7 @@ const SearchResultsContainer = ({
       salary: "$2500 - $3500",
     },
     {
-      image: "/assets/100-days-challenge/day-26/netflix.png",
+      image: `${assetsDir}/netflix.png`,
       position: "UX/UI Designer",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit consequuntur ullam exercitationem illum velit perferendis repellendus accusantium vitae debitis autem!",
@@ -85,7 +89,7 @@ const SearchResultsContainer = ({
       salary: "$1800 - $2500",
     },
     {
-      image: "/assets/100-days-challenge/day-26/netflix.png",
+      image: `${assetsDir}/netflix.png`,
       position: "Fullstack Developer",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit consequuntur ullam exercitationem illum velit perferendis repellendus accusantium vitae debitis autem!",
@@ -94,7 +98,7 @@ const SearchResultsContainer = ({
       salary: "$2500 - $3500",
     },
     {
-      image: "/assets/100-days-challenge/day-26/netflix.png",
+      image: `${assetsDir}/netflix.png`,
       position: "UX/UI Designer",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit consequuntur ullam exercitationem illum velit perferendis repellendus accusantium vitae debitis autem!",

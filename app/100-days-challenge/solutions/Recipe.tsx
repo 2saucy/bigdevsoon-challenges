@@ -1,6 +1,9 @@
+"use client";
+import { usePathname } from "next/navigation";
 import { CiClock2 } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { PiMedalThin, PiWalletThin } from "react-icons/pi";
+import { getAssetsDir } from "../utils";
 
 interface Recipe {
   image: string;
@@ -14,8 +17,10 @@ interface Recipe {
 }
 
 const Recipe = () => {
+  const assetsDir = getAssetsDir(usePathname());
+  const coffeeImage = `${assetsDir}/coffee.jpeg`;
   const recipe: Recipe = {
-    image: "/assets/100-days-challenge/day-5/coffee.jpeg",
+    image: coffeeImage,
     name: "Sweet Iced Coffee with Coconut Milk",
     description:
       "Sweet Iced Coffee with coconut milk is easy to make and stores well in the fridge. Make a large batch and save yourself a few trips to the coffee shop.",

@@ -2,10 +2,12 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaRegBell } from "react-icons/fa";
 import { IoArrowBackOutline, IoSend } from "react-icons/io5";
 import { SlOptionsVertical } from "react-icons/sl";
+import { getAssetsDir } from "../utils";
 
 interface User {
   id: number;
@@ -27,13 +29,15 @@ interface Chat {
 }
 
 const Messages = () => {
+  const assetsDir = getAssetsDir(usePathname());
+
   const chats: Chat[] = [
     {
       id: 1,
       user: {
         id: 1,
         name: "Son Goku",
-        profile_picture: "/assets/100-days-challenge/day-22/goku-pfp.jpeg",
+        profile_picture: `${assetsDir}/goku-pfp.jpeg`,
         status: "online",
       },
       messages: [
@@ -74,7 +78,7 @@ const Messages = () => {
       user: {
         id: 2,
         name: "Mikasa Ackerman",
-        profile_picture: "/assets/100-days-challenge/day-22/mikasa-pfp.jpg",
+        profile_picture: `${assetsDir}/mikasa-pfp.jpg`,
         status: "offline",
       },
       messages: [
@@ -100,7 +104,7 @@ const Messages = () => {
       user: {
         id: 3,
         name: "Gojo",
-        profile_picture: "/assets/100-days-challenge/day-22/gojo-pfp.jpg",
+        profile_picture: `${assetsDir}/gojo-pfp.jpg`,
         status: "away",
       },
       messages: [
@@ -126,7 +130,7 @@ const Messages = () => {
       user: {
         id: 4,
         name: "Kamisato Ayaka",
-        profile_picture: "/assets/100-days-challenge/day-22/ayaka-pfp.png",
+        profile_picture: `${assetsDir}/ayaka-pfp.png`,
         status: "away",
       },
       messages: [
@@ -147,7 +151,7 @@ const Messages = () => {
       user: {
         id: 5,
         name: "Paimon",
-        profile_picture: "/assets/100-days-challenge/day-22/paimon-pfp.jpg",
+        profile_picture: `${assetsDir}/paimon-pfp.jpg`,
         status: "busy",
       },
       messages: [
@@ -173,7 +177,7 @@ const Messages = () => {
       user: {
         id: 6,
         name: "Rick Sanchez",
-        profile_picture: "/assets/100-days-challenge/day-22/rick-pfp.jpg",
+        profile_picture: `${assetsDir}/rick-pfp.jpg`,
         status: "online",
       },
       messages: [
@@ -194,7 +198,7 @@ const Messages = () => {
       user: {
         id: 7,
         name: "Monkey D. Luffy",
-        profile_picture: "/assets/100-days-challenge/day-22/luffy-pfp.jpg",
+        profile_picture: `${assetsDir}/luffy-pfp.jpg`,
         status: "offline",
       },
       messages: [
@@ -220,7 +224,7 @@ const Messages = () => {
       user: {
         id: 8,
         name: "Giga Chad",
-        profile_picture: "/assets/100-days-challenge/day-22/gigachad-pfp.jpg",
+        profile_picture: `${assetsDir}/gigachad-pfp.jpg`,
         status: "offline",
       },
       messages: [
@@ -241,7 +245,7 @@ const Messages = () => {
       user: {
         id: 9,
         name: "Yunjiro Hanma",
-        profile_picture: "/assets/100-days-challenge/day-22/yunjiro-pfp.jpeg",
+        profile_picture: `${assetsDir}/yunjiro-pfp.jpeg`,
         status: "offline",
       },
       messages: [

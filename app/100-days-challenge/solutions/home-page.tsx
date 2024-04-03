@@ -1,10 +1,17 @@
+"use client";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { FaQuoteRight, FaStar } from "react-icons/fa";
 import { IoMail, IoPerson, IoSearchSharp } from "react-icons/io5";
 import { MdOutlineNavigateNext } from "react-icons/md";
+import { getAssetsDir } from "../utils";
+import { usePathname } from "next/navigation";
 
 const HomePage = () => {
+  const assetsDir = getAssetsDir(usePathname());
+  const pfp = `${assetsDir}/pfp.jpg`;
+  const plantsImages = [`${assetsDir}/plant-1.jpg`, `${assetsDir}/plant-2.jpg`];
+
   return (
     <main className="min-h-screen text-[#617564]">
       <Header />
@@ -12,14 +19,10 @@ const HomePage = () => {
         <div className="flex basis-1/2 items-center justify-center gap-6">
           <div className="relative">
             <FaQuoteRight className="h-20 w-20" />
-
             <div className="absolute z-20 flex flex-col gap-4 rounded-xl bg-white p-4 text-black shadow-lg">
               <div className="flex items-center gap-4">
                 <div className="h-[60px] w-[60px] overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    className="h-full w-full object-cover"
-                    src="/assets/100-days-challenge/day-23/pfp.jpg"
-                  />
+                  <img className="h-full w-full object-cover" src={pfp} />
                 </div>
                 <div>
                   <p className="font-semibold">John Doe</p>
@@ -43,9 +46,8 @@ const HomePage = () => {
           <div className="w-full">
             <AspectRatio ratio={9 / 16}>
               <img
-                src="/assets/100-days-challenge/day-23/chris-lee-70l1tDAI6rM-unsplash.jpg"
                 className="h-full w-full object-cover"
-                alt="Hero Image"
+                src={`${assetsDir}/plant-image.jpg`}
               />
             </AspectRatio>
           </div>
@@ -61,8 +63,8 @@ const HomePage = () => {
             voluptates!
           </p>
           <div className="flex items-center gap-8">
-            <PlantCard image="plant-1.jpg" />
-            <PlantCard image="plant-2.jpg" />
+            <PlantCard image={plantsImages[0]} />
+            <PlantCard image={plantsImages[1]} />
           </div>
         </div>
       </div>
@@ -106,7 +108,7 @@ const PlantCard = ({ image }: { image: string }) => {
       <div className="w-[180px] overflow-hidden rounded-xl">
         <AspectRatio ratio={1 / 1}>
           <img
-            src={"/assets/100-days-challenge/day-23/" + image}
+            src={image}
             className="h-full w-full object-cover"
             alt="Plant Card"
           />

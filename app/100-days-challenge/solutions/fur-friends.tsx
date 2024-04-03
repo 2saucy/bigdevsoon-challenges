@@ -1,8 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaLocationDot, FaPaw, FaShieldDog } from "react-icons/fa6";
 import { IoIosHeartEmpty, IoMdArrowRoundBack } from "react-icons/io";
 import { IoFemale, IoHeart, IoMale, IoSearch } from "react-icons/io5";
+import { getAssetsDir } from "../utils";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 interface Dog {
   name: string;
@@ -19,6 +22,7 @@ interface Dog {
 type Dogs = Dog[];
 
 const FurFriends = () => {
+  const assetsDir = getAssetsDir(usePathname());
   const dogs: Dogs = [
     {
       name: "Noemi",
@@ -28,8 +32,7 @@ const FurFriends = () => {
       height: 17,
       distance: "3,1 miles",
       sex: "female",
-      image:
-        "/assets/100-days-challenge/day-16/noemi-macavei-katocz-c7bUIRBqapA-unsplash.jpg",
+      image: `${assetsDir}/dog-5.jpg`,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi unde necessitatibus nihil, rem numquam perspiciatis doloremque quae tempore nam ipsum laudantium accusamus velit animi voluptatibus atque quis ut esse inventore.",
     },
@@ -41,8 +44,7 @@ const FurFriends = () => {
       height: 12,
       distance: "10,0 miles",
       sex: "male",
-      image:
-        "/assets/100-days-challenge/day-16/joey-yang-2glK9ao5jYI-unsplash.jpg",
+      image: `${assetsDir}/dog-3.jpg`,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi unde necessitatibus nihil, rem numquam perspiciatis doloremque quae tempore nam ipsum laudantium accusamus velit animi voluptatibus atque quis ut esse inventore.",
     },
@@ -54,8 +56,7 @@ const FurFriends = () => {
       height: 12,
       distance: "1,7 miles",
       sex: "male",
-      image:
-        "/assets/100-days-challenge/day-16/lorren-loki-6eSgIoY4h6I-unsplash.jpg",
+      image: `${assetsDir}/dog-4.jpg`,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi unde necessitatibus nihil, rem numquam perspiciatis doloremque quae tempore nam ipsum laudantium accusamus velit animi voluptatibus atque quis ut esse inventore.",
     },
@@ -67,8 +68,7 @@ const FurFriends = () => {
       height: 9,
       distance: "0,2 miles",
       sex: "male",
-      image:
-        "/assets/100-days-challenge/day-16/hermes-rivera-yeDt1JvaLBQ-unsplash.jpg",
+      image: `${assetsDir}/dog-2.jpg`,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi unde necessitatibus nihil, rem numquam perspiciatis doloremque quae tempore nam ipsum laudantium accusamus velit animi voluptatibus atque quis ut esse inventore.",
     },
@@ -80,42 +80,47 @@ const FurFriends = () => {
       height: 12,
       distance: "2,5 miles",
       sex: "female",
-      image:
-        "/assets/100-days-challenge/day-16/celyn-bowen-QVIJdvHZECc-unsplash.jpg",
+      image: `${assetsDir}/dog-1.jpg`,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi unde necessitatibus nihil, rem numquam perspiciatis doloremque quae tempore nam ipsum laudantium accusamus velit animi voluptatibus atque quis ut esse inventore.",
     },
   ];
-
-  const [currentDog, setCurrentDog] = useState<Dog>(dogs[0]);
+  const [currentView, setCurrentView] = useState<"list" | "profile">("list");
+  const [currentDog, setCurrentDog] = useState<Dog>({} as Dog);
 
   return (
-    <main className="bg-day-16 flex min-h-screen items-center justify-evenly max-md:flex-col">
-      <DogsList dogs={dogs} setCurrentDog={setCurrentDog} />
-      <Profile currentDog={currentDog} />
+    <main className="bg-fur-friends flex min-h-screen items-center justify-center">
+      {currentView === "list" ? (
+        <DogsList
+          dogs={dogs}
+          setCurrentDog={setCurrentDog}
+          setCurrentView={setCurrentView}
+        />
+      ) : (
+        <Profile currentDog={currentDog} setCurrentView={setCurrentView} />
+      )}
     </main>
   );
 };
 
 export default FurFriends;
 
-const Profile = ({ currentDog }: { currentDog: Dog }) => {
-  const {
-    name,
-    breed,
-    distance,
-    sex,
-    image,
-    description,
-    year,
-    weight,
-    height,
-  } = currentDog;
+const Profile = ({
+  currentDog,
+  setCurrentView,
+}: {
+  currentDog: Dog;
+  setCurrentView: (view: "list" | "profile") => void;
+}) => {
+  const { name, breed, distance, image, description, year, weight, height } =
+    currentDog;
 
   return (
     <Container>
       <div className="absolute flex w-full items-center justify-between px-4 py-4">
-        <IoMdArrowRoundBack className="h-6 w-6" />
+        <Button onClick={() => setCurrentView("list")}>
+          <IoMdArrowRoundBack className="h-6 w-6" />
+        </Button>
         <LikeButton />
       </div>
       <div className="h-1/2">
@@ -154,9 +159,11 @@ const Profile = ({ currentDog }: { currentDog: Dog }) => {
 const DogsList = ({
   dogs,
   setCurrentDog,
+  setCurrentView,
 }: {
   dogs: Dogs;
   setCurrentDog: (dog: Dog) => void;
+  setCurrentView: (view: "list" | "profile") => void;
 }) => {
   return (
     <Container>
@@ -174,7 +181,14 @@ const DogsList = ({
       </div>
       <div className="space-y-2 overflow-y-scroll p-2">
         {dogs.map((dog, i) => (
-          <button className="w-full" key={i} onClick={() => setCurrentDog(dog)}>
+          <button
+            key={i}
+            className="w-full"
+            onClick={() => {
+              setCurrentDog(dog);
+              setCurrentView("profile");
+            }}
+          >
             <DogCard key={dog.name} {...dog} />
           </button>
         ))}

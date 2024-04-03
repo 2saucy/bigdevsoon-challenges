@@ -1,4 +1,6 @@
+import { usePathname } from "next/navigation";
 import { createContext, useState } from "react";
+import { getAssetsDir } from "../utils";
 
 type Cart = {
   id: number;
@@ -16,29 +18,28 @@ type CartContext = {
 export const CartContext = createContext<CartContext>({} as CartContext);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
+  const assetsDir = getAssetsDir(usePathname());
+
   const [cart, setCart] = useState<Cart>([
     {
       id: 1,
       name: "Product 1",
       price: 60,
-      image:
-        "/assets/100-days-challenge/day-14/bella-lac-LTyPTQ2tgNA-unsplash.jpg",
+      image: `${assetsDir}/product-1.jpg`,
       quantity: 1,
     },
     {
       id: 2,
       name: "Product 2",
       price: 25.99,
-      image:
-        "/assets/100-days-challenge/day-14/domino-164_6wVEHfI-unsplash.jpg",
+      image: `${assetsDir}/product-2.jpg`,
       quantity: 1,
     },
     {
       id: 3,
       name: "Product 3",
       price: 15,
-      image:
-        "/assets/100-days-challenge/day-14/mediamodifier-t8HiP3e5abg-unsplash.jpg",
+      image: `${assetsDir}/product-3.jpg`,
       quantity: 1,
     },
   ]);

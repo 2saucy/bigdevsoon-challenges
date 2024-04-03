@@ -3,12 +3,16 @@ import { useEffect, useState } from "react";
 import { IoIosStar } from "react-icons/io";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import { getAssetsDir } from "../utils";
 
 const RestaurantReservation = () => {
+  const assetsDir = getAssetsDir(usePathname());
+
   const images: string[] = [
-    "joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg",
-    "chris-liverani-oCsaxvGCehM-unsplash.jpg",
-    "chad-montano-MqT0asuoIcU-unsplash.jpg",
+    `${assetsDir}/1.jpg`,
+    `${assetsDir}/2.jpg`,
+    `${assetsDir}/3.jpg`,
   ];
 
   const [currentImgIndex, setCurrentImgIndex] = useState<number>(0);
@@ -24,13 +28,10 @@ const RestaurantReservation = () => {
   }, []);
 
   return (
-    <main className="bg-day-12 flex min-h-screen items-center justify-center bg-cover">
+    <main className="flex min-h-screen items-center justify-center bg-restaurant-reservation bg-cover">
       <div className="flex w-[450px] flex-col gap-4 overflow-hidden rounded-lg bg-slate-50 shadow-xl">
         <div className="relative h-[240px]">
-          <img
-            className="h-full w-full object-cover"
-            src={"/assets/100-days-challenge/day-12/" + currentImage}
-          />
+          <img className="h-full w-full object-cover" src={currentImage} />
           <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-4">
             {images.map((image, i) => (
               <button

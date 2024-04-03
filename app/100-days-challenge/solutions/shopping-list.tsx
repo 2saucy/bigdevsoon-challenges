@@ -6,7 +6,7 @@ import { CartContext, CartProvider } from "../context/CartContext";
 const ShoppingList = () => {
   return (
     <CartProvider>
-      <main className="bg-day-14 flex min-h-screen items-center justify-center gap-4 bg-cover py-8">
+      <main className="flex min-h-screen items-center justify-center gap-4 bg-shopping-list bg-cover py-8">
         <div className="flex gap-4 max-md:flex-col">
           <Cart />
           <div className="flex flex-col gap-4">

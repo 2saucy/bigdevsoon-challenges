@@ -1,21 +1,25 @@
 "use client";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaList } from "react-icons/fa";
 import { FaDisplay } from "react-icons/fa6";
 import { GrAppsRounded } from "react-icons/gr";
+import { getAssetsDir } from "../utils";
 
 const ImagesPreview = () => {
+  const assetsDir = getAssetsDir(usePathname());
+
   const images: string[] = [
-    "birmingham-museums-trust-wvD0zZnRbcw-unsplash.jpg",
-    "chuttersnap-eH_ftJYhaTY-unsplash.jpg",
-    "dylan-leagh-UG3L8WAQLBs-unsplash.jpg",
-    "emma-fabbri-2TmsyZXMNTE-unsplash.jpg",
-    "hans-veth-ltEraYc7QrU-unsplash.jpg",
-    "joshua-coleman-R1OSU00xo78-unsplash.jpg",
-    "redd-f-c7xBEFBJhkg-unsplash.jpg",
-    "steve-johnson-u11UYmBfuCc-unsplash.jpg",
-    "zhang-xupeng--wlxM5Ig_LI-unsplash.jpg",
+    `${assetsDir}/image-1.jpg`,
+    `${assetsDir}/image-2.jpg`,
+    `${assetsDir}/image-3.jpg`,
+    `${assetsDir}/image-4.jpg`,
+    `${assetsDir}/image-5.jpg`,
+    `${assetsDir}/image-6.jpg`,
+    `${assetsDir}/image-7.jpg`,
+    `${assetsDir}/image-8.jpg`,
+    `${assetsDir}/image-9.jpg`,
   ];
 
   const [activeMode, setActiveMode] = useState<"Multi" | "List" | "Carousel">(

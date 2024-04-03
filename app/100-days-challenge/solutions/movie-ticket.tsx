@@ -1,9 +1,10 @@
 "use client";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
+import { getAssetsDir } from "../utils";
 
 const MovieTicket = () => {
   const [isBuyinTicket, setIsBuyinTicket] = useState(false);
@@ -26,12 +27,14 @@ const Movie = ({
 }: {
   setIsBuyinTicket: (bool: boolean) => void;
 }) => {
+  const assetsDir = getAssetsDir(usePathname());
+
   return (
     <div className="flex aspect-[2/4] w-[400px] flex-col overflow-hidden rounded-2xl bg-white">
       <div className="basis-1/2">
         <img
           className="h-full w-full object-cover"
-          src="/assets/100-days-challenge/day-24/spirited-away.jpg"
+          src={`${assetsDir}/movie-image.jpg`}
           alt="Spirited Away"
         />
       </div>
@@ -51,35 +54,6 @@ const Movie = ({
             strange abandoned amusement park that she and her parents find when
             they reach a dead end in their car.
           </p>
-          <div>
-            <h2 className="text-lg font-bold">Cast</h2>
-            <div className="flex items-center gap-4">
-              <div className="w-20 overflow-hidden rounded-lg">
-                <AspectRatio ratio={1 / 1}>
-                  <img
-                    className="h-full w-full object-cover"
-                    src="/assets/100-days-challenge/day-1/profile-pic.jpg"
-                  />
-                </AspectRatio>
-              </div>
-              <div className="w-20 overflow-hidden rounded-lg">
-                <AspectRatio ratio={1 / 1}>
-                  <img
-                    className="h-full w-full object-cover"
-                    src="/assets/100-days-challenge/day-1/profile-pic.jpg"
-                  />
-                </AspectRatio>
-              </div>
-              <div className="w-20 overflow-hidden rounded-lg">
-                <AspectRatio ratio={1 / 1}>
-                  <img
-                    className="h-full w-full object-cover"
-                    src="/assets/100-days-challenge/day-1/profile-pic.jpg"
-                  />
-                </AspectRatio>
-              </div>
-            </div>
-          </div>
         </div>
         <Button className="mt-2" onClick={() => setIsBuyinTicket(true)}>
           Buy tickets

@@ -1,10 +1,15 @@
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { FaFacebook, FaLinkedin, FaDribbble } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
+import { getAssetsDir } from "../utils";
+import { usePathname } from "next/navigation";
 
 const ProfileCard = () => {
+  const assetsDir = getAssetsDir(usePathname());
+  const pfp = `${assetsDir}/pfp.jpg`;
   const socialMedia = [
     {
       name: "Facebook",
@@ -36,15 +41,12 @@ const ProfileCard = () => {
   return (
     <main className="flex h-screen items-center justify-center bg-[#eff3c0]">
       <div className="relative h-[650px] w-[450px] overflow-hidden rounded-[3rem] bg-white p-8 shadow-xl duration-150 ease-in-out hover:scale-105 hover:shadow-2xl">
-        <img
+        {/* <img
           className="absolute left-0 top-0 h-[250px] w-full"
           src="/assets/100-days-challenge/day-1/curve.svg"
-        />
+        /> */}
         <Avatar className="absolute left-1/2 top-5 h-[120px] w-[120px] -translate-x-1/2">
-          <AvatarImage
-            className="object-cover"
-            src="/assets/100-days-challenge/day-1/profile-pic.jpg"
-          />
+          <AvatarImage className="object-cover" src={pfp} />
           <AvatarFallback>Profile Image</AvatarFallback>
         </Avatar>
         <div className="flex h-full flex-col justify-between pt-[250px]">

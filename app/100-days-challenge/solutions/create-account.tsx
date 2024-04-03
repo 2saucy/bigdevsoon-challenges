@@ -6,11 +6,7 @@ import { MdMessage, MdVisibility } from "react-icons/md";
 
 const CreateAccount = () => {
   return (
-    <main className="relative h-screen antialiased">
-      <img
-        className="h-full w-full object-cover"
-        src="/assets/100-days-challenge/day-7/background.jpg"
-      />
+    <main className="relative h-screen bg-create-account bg-cover antialiased">
       <div className="absolute top-1/2 -translate-y-1/2 max-sm:w-full max-sm:p-4 sm:ml-12 md:w-[450px]">
         <div className="space-y-2">
           <span className="text-sm font-black uppercase text-[#939393]">
