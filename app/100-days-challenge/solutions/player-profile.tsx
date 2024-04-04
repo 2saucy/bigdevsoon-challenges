@@ -198,17 +198,20 @@ const CardContent = ({
 const Info = ({ info }: { info: AdditionalInfo }) => {
   return (
     <div className="space-y-4">
-      {Object.keys(info).map((attribute) => (
-        <div
-          className="flex items-center justify-between gap-2 text-xs"
-          key={attribute}
-        >
-          <span className="opacity-50">
-            {attribute.charAt(0).toUpperCase() + attribute.slice(1)}
-          </span>
-          <span className="text-end font-semibold">{info[attribute]}</span>
-        </div>
-      ))}
+      {Object.keys(info).map((attribute) => {
+        const value = info[attribute as keyof typeof info]
+        const capitalized = attribute.charAt(0).toUpperCase() + attribute.slice(1)
+
+        return (
+          <div
+            className="flex items-center justify-between gap-2 text-xs"
+            key={attribute}
+          >
+            <span className="opacity-50">{capitalized}</span>
+            <span className="text-end font-semibold">{value}</span>
+          </div>
+        )
+      })}
     </div>
   );
 };
