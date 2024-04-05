@@ -199,8 +199,9 @@ const Info = ({ info }: { info: AdditionalInfo }) => {
   return (
     <div className="space-y-4">
       {Object.keys(info).map((attribute) => {
-        const value = info[attribute as keyof typeof info]
-        const capitalized = attribute.charAt(0).toUpperCase() + attribute.slice(1)
+        const value = info[attribute as keyof typeof info];
+        const capitalized =
+          attribute.charAt(0).toUpperCase() + attribute.slice(1);
 
         return (
           <div
@@ -210,7 +211,7 @@ const Info = ({ info }: { info: AdditionalInfo }) => {
             <span className="opacity-50">{capitalized}</span>
             <span className="text-end font-semibold">{value}</span>
           </div>
-        )
+        );
       })}
     </div>
   );

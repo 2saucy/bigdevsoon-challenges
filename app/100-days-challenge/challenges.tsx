@@ -43,6 +43,9 @@ import FriendRequest from "./solutions/friend-request";
 import DownloadApp from "./solutions/download-app";
 import AppNavigation from "./solutions/app-navigation";
 import LanguageApp from "./solutions/language-app";
+import BillingPage from "./solutions/billing-page";
+import BrandVisualizer from "./solutions/brand-visualizer";
+import Playlist from "./solutions/playlist";
 
 type Challenges = {
   slug: string;
@@ -229,5 +232,17 @@ export const challenges: Challenges = [
   {
     slug: "language-app",
     solution: <LanguageApp />,
+  },
+  {
+    slug: "billing-page",
+    solution: <BillingPage />,
+  },
+  {
+    slug: "brand-visualizer",
+    solution: <BrandVisualizer />,
+  },
+  {
+    slug: "playlist",
+    solution: <Playlist />,
   },
 ];
